@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lanka Road Signs Library (134 Signs) & Flashcards</title>
+  <meta name="description" content="Comprehensive official directory of all 134 Sri Lankan road signs prescribed under the Motor Traffic Act. Includes danger warning, prohibitory, mandatory, priority signs and interactive flashcards.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .view-toggle-group {
+      display: flex;
+      background: var(--bg-main);
+      padding: 0.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+    .view-toggle-btn {
+      padding: 0.45rem 1rem;
+      border: none;
+      background: transparent;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: var(--transition);
+    }
+    .view-toggle-btn.active {
+      background: var(--bg-card);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🇱🇰</div>
+        <div class="brand-text">
+          <span class="brand-title">Sri Lanka Driving License</span>
+          <span class="brand-subtitle">Road Signs Library</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">📖 Procedure Guide</a></li>
+        <li><a href="signs.html" class="nav-link active">🚸 Road Signs (134)</a></li>
+        <li><a href="quiz.html" class="nav-link">📝 1:1 Written Exam</a></li>
+        <li><a href="questions.html" class="nav-link">📚 Question Bank (100)</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="theme-toggle-btn" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <a href="quiz.html?mode=practice&topic=Road Signs" class="btn-cta">
+          <span>Test Signs</span>
+          <span>⚡</span>
+        </a>
+        <button id="mobile-menu-toggle" class="btn-icon mobile-menu-btn" title="Open Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Signs Hero -->
+    <section class="section" style="padding: 3rem 1.5rem 2rem; background: var(--bg-card); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <span class="section-tag">Official Gazette Standards</span>
+            <h1 style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem;">
+              Sri Lankan Road Signs Directory
+            </h1>
+            <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px;">
+              All <strong id="total-signs-count">134</strong> road signs officially gazetted under the Motor Traffic Act (Chapter 203) and the RDA Manual on Traffic Control Devices. Rendered in high-definition vector graphics.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <div class="view-toggle-group">
+              <button id="view-grid-btn" class="view-toggle-btn active">
+                <span>▦</span>
+                <span>Grid View</span>
+              </button>
+              <button id="view-flash-btn" class="view-toggle-btn">
+                <span>🎴</span>
+                <span>Flashcard Study</span>
+              </button>
+            </div>
+
+            <a href="quiz.html?mode=practice&topic=Road Signs" class="btn-hero-primary" style="padding: 0.55rem 1.15rem; font-size: 0.9rem;">
+              <span>Quiz on Signs (Practice Mode)</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+      <div class="container">
+        <!-- Controls: Search & Category Filter Tabs -->
+        <div class="signs-controls">
+          <div class="search-row">
+            <div class="search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="signs-search-input" placeholder="Search signs by name, code (e.g. DWS-01, PHS-04), or meaning...">
+            </div>
+          </div>
+
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-category="all">All Signs (134)</button>
+            <button class="filter-tab" data-category="Warning">Danger Warning (49)</button>
+            <button class="filter-tab" data-category="Prohibitory">Prohibitory (26)</button>
+            <button class="filter-tab" data-category="Restrictive">Restrictive (10)</button>
+            <button class="filter-tab" data-category="Mandatory">Mandatory (8)</button>
+            <button class="filter-tab" data-category="Priority">Priority Signs (7)</button>
+            <button class="filter-tab" data-category="Informative">Informative & Directional (22)</button>
+            <button class="filter-tab" data-category="Traffic">Traffic Signals (5)</button>
+            <button class="filter-tab" data-category="Markings">Road Markings (4)</button>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-muted);">
+            <span id="filtered-signs-count">Showing 134 Signs</span>
+            <span>Click any sign card to view full legal rules and meaning</span>
+          </div>
+        </div>
+
+        <!-- GRID VIEW -->
+        <div id="signs-grid-view">
+          <div class="signs-grid" id="signs-grid"></div>
+        </div>
+
+        <!-- FLASHCARD STUDY VIEW (Hidden by default) -->
+        <div id="signs-flash-view" style="display: none;">
+          <div class="flashcard-stage">
+            <div class="flashcard-inner" id="flashcard-inner">
+              <!-- FRONT -->
+              <div class="flashcard-front">
+                <span id="flash-front-code" class="badge badge-blue" style="margin-bottom: 1.5rem;">DWS-01</span>
+                <img id="flash-front-img" src="" alt="Sign Flashcard">
+                <h3 style="font-size: 1.35rem; font-weight: 700; margin-top: 1rem;">What does this sign mean?</h3>
+                <span class="flashcard-hint">💡 Click card or press Space to reveal answer</span>
+              </div>
+
+              <!-- BACK -->
+              <div class="flashcard-back">
+                <span id="flash-back-cat" class="badge badge-amber" style="margin-bottom: 1rem;">Danger Warning</span>
+                <h2 id="flash-back-title" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem; color: var(--primary);">
+                  Curve to the left
+                </h2>
+                <p id="flash-back-meaning" style="font-size: 1rem; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.5;">
+                  Alerts drivers to a sharp bend to the left ahead. Slow down and maintain your lane position.
+                </p>
+                <div style="font-size: 0.82rem; color: var(--text-muted); background: var(--bg-main); padding: 0.75rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+                  <strong>Sign Shape:</strong> <span id="flash-back-shape">Equilateral Triangle</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flashcard Nav Controls -->
+            <div class="flashcard-nav">
+              <button id="flash-prev-btn" class="btn-hero-secondary" style="padding: 0.6rem 1.25rem;">
+                ← Previous
+              </button>
+              <button id="flash-flip-btn" class="btn-cta" style="padding: 0.6rem 1.5rem;">
+                Flip Card (Space)
+              </button>
+              <button id="flash-next-btn" class="btn-hero-secondary" style="padding: 0.6rem 1.25rem;">
+                Next →
+              </button>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+              <span id="flash-progress-text" style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">
+                Card 1 of 134
+              </span>
+              <button id="flash-shuffle-btn" class="btn-hero-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">
+                🔀 Shuffle Deck
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGN DETAIL MODAL -->
+    <div class="modal-overlay" id="sign-modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close-btn" id="sign-modal-close" aria-label="Close Modal">&times;</button>
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <div style="width: 160px; height: 160px; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center;">
+            <img id="modal-sign-img" src="" alt="Sign Preview" style="max-height: 150px; max-width: 150px; object-fit: contain;">
+          </div>
+          <span id="modal-sign-code" class="badge badge-blue" style="font-size: 0.85rem; margin-bottom: 0.5rem;">Code</span>
+          <h2 id="modal-sign-title" style="font-size: 1.6rem; font-weight: 800; color: var(--text-main);">Sign Name</h2>
+          <span id="modal-sign-cat" class="badge badge-amber" style="margin-top: 0.5rem;">Category</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
+          <div class="sidebar-box">
+            <span class="sidebar-box-title">Legal Meaning & Driver Action</span>
+            <p id="modal-sign-meaning" style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">Meaning</p>
+          </div>
+
+          <div class="sidebar-box">
+            <span class="sidebar-box-title">Official Shape & Color Standard</span>
+            <p id="modal-sign-shape" style="font-size: 0.9rem; color: var(--text-muted);">Shape standard</p>
+          </div>
+
+          <div class="info-alert" style="font-size: 0.85rem;">
+            <strong>Motor Traffic Act Compliance:</strong> Disobeying regulatory (prohibitory, restrictive, mandatory, or priority) signs constitutes a traffic violation subject to spot fines or court proceedings under the Motor Traffic Act.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>© 2026 Sri Lanka Driving License Portal. All road signs compliant with the Motor Traffic Act (Chapter 203).</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/signs-data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/signs.js"></script>
+</body>
+</html>

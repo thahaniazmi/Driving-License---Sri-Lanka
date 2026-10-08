@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMT Written Exam Past Questions Bank (100 Questions) - Sri Lanka</title>
+  <meta name="description" content="Searchable and interactive question bank containing 100 authentic past exam and model questions for the Sri Lanka Department of Motor Traffic driving theory test.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .q-filter-btn {
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      background: var(--bg-main);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .q-filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .q-filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🇱🇰</div>
+        <div class="brand-text">
+          <span class="brand-title">Sri Lanka Driving License</span>
+          <span class="brand-subtitle">Question Bank</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">📖 Procedure Guide</a></li>
+        <li><a href="signs.html" class="nav-link">🚸 Road Signs (134)</a></li>
+        <li><a href="quiz.html" class="nav-link">📝 1:1 Written Exam</a></li>
+        <li><a href="questions.html" class="nav-link active">📚 Question Bank (100)</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="theme-toggle-btn" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <a href="quiz.html" class="btn-cta">
+          <span>Take Test</span>
+          <span>⚡</span>
+        </a>
+        <button id="mobile-menu-toggle" class="btn-icon mobile-menu-btn" title="Open Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Question Bank Hero -->
+    <section class="section" style="padding: 3rem 1.5rem 2rem; background: var(--bg-card); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <span class="section-tag">DMT Theory Exam Preparation</span>
+            <h1 style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem;">
+              Written Examination Question Bank
+            </h1>
+            <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px;">
+              Study <strong id="qbank-total-count">100</strong> authentic questions and model test items covering the entire Sri Lankan Highway Code and Motor Traffic Act syllabus.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <button id="toggle-reveal-btn" class="btn-hero-secondary" style="padding: 0.55rem 1.15rem; font-size: 0.9rem;">
+              Reveal All Answers
+            </button>
+            <a href="quiz.html" class="btn-hero-primary" style="padding: 0.55rem 1.15rem; font-size: 0.9rem;">
+              <span>Simulate 40-Q Exam</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Questions Content -->
+    <section class="section">
+      <div class="container" style="max-width: 900px;">
+        <!-- Filter Controls -->
+        <div class="signs-controls" style="margin-bottom: 2rem;">
+          <div class="search-row">
+            <div class="search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="qbank-search-input" placeholder="Search questions by keyword (e.g. speed, roundabout, overtaking, alcohol, ABS)...">
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <button class="q-filter-btn active" data-category="all">All Topics (100)</button>
+            <button class="q-filter-btn" data-category="Road Signs">Road Signs & Markings</button>
+            <button class="q-filter-btn" data-category="Rules of the Road">Rules of the Road & Priority</button>
+            <button class="q-filter-btn" data-category="Speed Limits">Speed Limits & Expressways</button>
+            <button class="q-filter-btn" data-category="Vehicle Safety">Vehicle Safety & Mechanics</button>
+            <button class="q-filter-btn" data-category="Licensing">Licensing & Legal</button>
+            <button class="q-filter-btn" id="qbank-bookmarks-tab" style="margin-left: auto;">
+              ★ Bookmarks (<span id="qbank-bm-count">0</span>)
+            </button>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.75rem;">
+            <span id="qbank-showing-count">Showing 100 Questions</span>
+            <span>💡 Click any option directly on a question to test yourself</span>
+          </div>
+        </div>
+
+        <!-- Questions List Container -->
+        <div id="questions-list-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>© 2026 Sri Lanka Driving License Portal. Independent educational resource.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/questions-data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/questions.js"></script>
+</body>
+</html>

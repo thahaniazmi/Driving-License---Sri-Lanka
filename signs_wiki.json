@@ -1,0 +1,1342 @@
+[
+  {
+    "id": "LK_Road_sign_DWS-01",
+    "name": "Curve to the left",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-01.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/LK_Road_sign_DWS-01.svg/120px-LK_Road_sign_DWS-01.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-01.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-01.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-02",
+    "name": "Curve to the right",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-02.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/LK_Road_sign_DWS-02.svg/120px-LK_Road_sign_DWS-02.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-02.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-02.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-03",
+    "name": "Double curve, first to the left",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-03.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/LK_Road_sign_DWS-03.svg/120px-LK_Road_sign_DWS-03.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-03.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-03.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-04",
+    "name": "Double curve, first to the right",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-04.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/LK_Road_sign_DWS-04.svg/120px-LK_Road_sign_DWS-04.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-04.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-04.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-05",
+    "name": "Hairpin curve to the left",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-05.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/LK_Road_sign_DWS-05.svg/120px-LK_Road_sign_DWS-05.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-05.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-05.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-06",
+    "name": "Hairpin curve to the right",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-06.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/LK_Road_sign_DWS-06.svg/120px-LK_Road_sign_DWS-06.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-06.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-06.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-07",
+    "name": "Dual Carriageway ends",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-07.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/LK_Road_sign_DWS-07.svg/120px-LK_Road_sign_DWS-07.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-07.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-07.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-08",
+    "name": "Dual Carriageway starts",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-08.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/LK_Road_sign_DWS-08.svg/120px-LK_Road_sign_DWS-08.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-08.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-08.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-09",
+    "name": "Road narrows",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-09.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/LK_Road_sign_DWS-09.svg/120px-LK_Road_sign_DWS-09.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-09.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-09.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-10",
+    "name": "Road narrows on the left",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-10.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/LK_Road_sign_DWS-10.svg/120px-LK_Road_sign_DWS-10.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-10.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-10.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-11",
+    "name": "Road narrows on the right",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-11.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/LK_Road_sign_DWS-11.svg/120px-LK_Road_sign_DWS-11.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-11.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-11.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-12",
+    "name": "Crossroads",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-12.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/LK_Road_sign_DWS-12.svg/120px-LK_Road_sign_DWS-12.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-12.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-12.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-13",
+    "name": "Staggered junctions",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-13.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/LK_Road_sign_DWS-13.svg/120px-LK_Road_sign_DWS-13.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-13.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-13.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-14",
+    "name": "Staggered junctions",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-14.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/LK_Road_sign_DWS-14.svg/120px-LK_Road_sign_DWS-14.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-14.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-14.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-15",
+    "name": "T-junction",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-15.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/LK_Road_sign_DWS-15.svg/120px-LK_Road_sign_DWS-15.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-15.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-15.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-16",
+    "name": "Y-junction",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-16.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/LK_Road_sign_DWS-16.svg/120px-LK_Road_sign_DWS-16.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-16.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-16.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-17",
+    "name": "Merging traffic from the left",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-17.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/LK_Road_sign_DWS-17.svg/120px-LK_Road_sign_DWS-17.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-17.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-17.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-18",
+    "name": "Joining a side road at right angles to the left",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-18.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/LK_Road_sign_DWS-18.svg/120px-LK_Road_sign_DWS-18.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-18.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-18.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-19",
+    "name": "Merging traffic from the right",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-19.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/LK_Road_sign_DWS-19.svg/120px-LK_Road_sign_DWS-19.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-19.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-19.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-20",
+    "name": "Joining a side road at right angles to the right",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-20.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/LK_Road_sign_DWS-20.svg/120px-LK_Road_sign_DWS-20.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-20.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-20.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-21",
+    "name": "Narrow bridge",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-21.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/LK_Road_sign_DWS-21.svg/120px-LK_Road_sign_DWS-21.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-21.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-21.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-22",
+    "name": "Two-way traffic ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-22.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/LK_Road_sign_DWS-22.svg/120px-LK_Road_sign_DWS-22.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-22.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-22.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-23",
+    "name": "Stop sign ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-23.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/LK_Road_sign_DWS-23.svg/120px-LK_Road_sign_DWS-23.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-23.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-23.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-24",
+    "name": "Give way sign ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-24.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/LK_Road_sign_DWS-24.svg/120px-LK_Road_sign_DWS-24.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-24.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-24.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-25",
+    "name": "Roundabout ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-25.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/LK_Road_sign_DWS-25.svg/120px-LK_Road_sign_DWS-25.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-25.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-25.svg"
+  },
+  {
+    "id": "LK_road_sign_DWS-26",
+    "name": "Traffic lights ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_road_sign_DWS-26.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/LK_road_sign_DWS-26.svg/120px-LK_road_sign_DWS-26.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_DWS-26.svg",
+    "localFile": "assets/signs/LK_road_sign_DWS-26.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-27",
+    "name": "Steep descent",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-27.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/LK_Road_sign_DWS-27.svg/120px-LK_Road_sign_DWS-27.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-27.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-27.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-28",
+    "name": "Steep ascent",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-28.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/LK_Road_sign_DWS-28.svg/120px-LK_Road_sign_DWS-28.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-28.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-28.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-29",
+    "name": "Slippery road",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-29.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/LK_Road_sign_DWS-29.svg/120px-LK_Road_sign_DWS-29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-29.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-29.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-30",
+    "name": "Loose gravel",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-30.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/LK_Road_sign_DWS-30.svg/120px-LK_Road_sign_DWS-30.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-30.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-30.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-31",
+    "name": "Falling rocks",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-31.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/LK_Road_sign_DWS-31.svg/120px-LK_Road_sign_DWS-31.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-31.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-31.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-32",
+    "name": "Pedestrian crossing ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-32.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/LK_Road_sign_DWS-32.svg/120px-LK_Road_sign_DWS-32.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-32.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-32.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-33",
+    "name": "Children",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-33.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/LK_Road_sign_DWS-33.svg/120px-LK_Road_sign_DWS-33.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-33.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-33.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-34",
+    "name": "Blind pedestrians crossing",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-34.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/LK_Road_sign_DWS-34.svg/120px-LK_Road_sign_DWS-34.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-34.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-34.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-35",
+    "name": "Roadworks",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-35.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/LK_Road_sign_DWS-35.svg/120px-LK_Road_sign_DWS-35.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-35.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-35.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-36",
+    "name": "Level crossing with barriers ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-36.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/LK_Road_sign_DWS-36.svg/120px-LK_Road_sign_DWS-36.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-36.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-36.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-37",
+    "name": "Level crossing without barriers ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-37.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/LK_Road_sign_DWS-37.svg/120px-LK_Road_sign_DWS-37.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-37.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-37.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-38",
+    "name": "Bus lane ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-38.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/LK_Road_sign_DWS-38.svg/120px-LK_Road_sign_DWS-38.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-38.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-38.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-39",
+    "name": "Cycle lane ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-39.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/LK_Road_sign_DWS-39.svg/120px-LK_Road_sign_DWS-39.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-39.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-39.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-40",
+    "name": "Cyclists",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-40.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/LK_Road_sign_DWS-40.svg/120px-LK_Road_sign_DWS-40.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-40.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-40.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-41",
+    "name": "Domestic animals",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-41.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/LK_Road_sign_DWS-41.svg/120px-LK_Road_sign_DWS-41.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-41.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-41.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-42",
+    "name": "Quayside or riverbank",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-42.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/LK_Road_sign_DWS-42.svg/120px-LK_Road_sign_DWS-42.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-42.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-42.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-43",
+    "name": "Dangerous cliff",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-43.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/LK_Road_sign_DWS-43.svg/120px-LK_Road_sign_DWS-43.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-43.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-43.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-45",
+    "name": "Uneven road",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-45.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/LK_Road_sign_DWS-45.svg/120px-LK_Road_sign_DWS-45.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-45.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-45.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-44",
+    "name": "Bump ahead",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-44.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/LK_Road_sign_DWS-44.svg/120px-LK_Road_sign_DWS-44.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-44.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-44.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-46",
+    "name": "Dip",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-46.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/LK_Road_sign_DWS-46.svg/120px-LK_Road_sign_DWS-46.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-46.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-46.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-47",
+    "name": "Hump bridge",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-47.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/LK_Road_sign_DWS-47.svg/120px-LK_Road_sign_DWS-47.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-47.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-47.svg"
+  },
+  {
+    "id": "LK_road_sign_DWS-48",
+    "name": "Tunnel",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_road_sign_DWS-48.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/LK_road_sign_DWS-48.svg/120px-LK_road_sign_DWS-48.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_DWS-48.svg",
+    "localFile": "assets/signs/LK_road_sign_DWS-48.svg"
+  },
+  {
+    "id": "LK_Road_sign_DWS-49",
+    "name": "Low-flying aircraft",
+    "category": "Warning signs",
+    "section": "Warning signs",
+    "fileName": "LK_Road_sign_DWS-49.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/LK_Road_sign_DWS-49.svg/120px-LK_Road_sign_DWS-49.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_Road_sign_DWS-49.svg",
+    "localFile": "assets/signs/LK_Road_sign_DWS-49.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-01",
+    "name": "No entry",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-01.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/LK_road_sign_PHS-01.svg/120px-LK_road_sign_PHS-01.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-01.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-01.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-02",
+    "name": "No left turn",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-02.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/LK_road_sign_PHS-02.svg/120px-LK_road_sign_PHS-02.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-02.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-02.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-03",
+    "name": "No right turn",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-03.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/LK_road_sign_PHS-03.svg/120px-LK_road_sign_PHS-03.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-03.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-03.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-04",
+    "name": "No U-turn",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-04.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/LK_road_sign_PHS-04.svg/120px-LK_road_sign_PHS-04.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-04.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-04.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-05",
+    "name": "No overtaking",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-05.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/LK_road_sign_PHS-05.svg/120px-LK_road_sign_PHS-05.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-05.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-05.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-06",
+    "name": "End of overtaking prohibition",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-06.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/LK_road_sign_PHS-06.svg/120px-LK_road_sign_PHS-06.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-06.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-06.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-07",
+    "name": "No overtaking by trucks",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-07.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/LK_road_sign_PHS-07.svg/120px-LK_road_sign_PHS-07.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-07.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-07.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-08",
+    "name": "End of overtaking prohibition by trucks",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-08.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/LK_road_sign_PHS-08.svg/120px-LK_road_sign_PHS-08.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-08.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-08.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-09",
+    "name": "No horns",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-09.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/LK_road_sign_PHS-09.svg/120px-LK_road_sign_PHS-09.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-09.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-09.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-10",
+    "name": "All vehicles prohibited",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-10.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/LK_road_sign_PHS-10.svg/120px-LK_road_sign_PHS-10.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-10.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-10.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-11",
+    "name": "No motor vehicles",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-11.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/LK_road_sign_PHS-11.svg/120px-LK_road_sign_PHS-11.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-11.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-11.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-12",
+    "name": "No buses",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-12.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/LK_road_sign_PHS-12.svg/120px-LK_road_sign_PHS-12.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-12.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-12.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-13",
+    "name": "No trucks",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-13.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/LK_road_sign_PHS-13.svg/120px-LK_road_sign_PHS-13.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-13.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-13.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-14",
+    "name": "No trailers",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-14.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/LK_road_sign_PHS-14.svg/120px-LK_road_sign_PHS-14.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-14.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-14.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-15",
+    "name": "No tractors",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-15.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/LK_road_sign_PHS-15.svg/120px-LK_road_sign_PHS-15.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-15.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-15.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-16",
+    "name": "No hand tractors",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-16.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/LK_road_sign_PHS-16.svg/120px-LK_road_sign_PHS-16.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-16.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-16.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-17",
+    "name": "No three-wheeled vehicles",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-17.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/LK_road_sign_PHS-17.svg/120px-LK_road_sign_PHS-17.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-17.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-17.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-18",
+    "name": "No motorcycles",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-18.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/LK_road_sign_PHS-18.svg/120px-LK_road_sign_PHS-18.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-18.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-18.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-19",
+    "name": "No bicycles",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-19.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/LK_road_sign_PHS-19.svg/120px-LK_road_sign_PHS-19.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-19.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-19.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-20",
+    "name": "No animal-drawn vehicles",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-20.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/LK_road_sign_PHS-20.svg/120px-LK_road_sign_PHS-20.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-20.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-20.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-21",
+    "name": "No handcarts",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-21.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/LK_road_sign_PHS-21.svg/120px-LK_road_sign_PHS-21.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-21.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-21.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-22",
+    "name": "No pedestrians",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-22.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/LK_road_sign_PHS-22.svg/120px-LK_road_sign_PHS-22.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-22.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-22.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-23",
+    "name": "No parking",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-23.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/LK_road_sign_PHS-23.svg/120px-LK_road_sign_PHS-23.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-23.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-23.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-24",
+    "name": "No parking and standing",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-24.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/LK_road_sign_PHS-24.svg/120px-LK_road_sign_PHS-24.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-24.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-24.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-25",
+    "name": "No parking on odd-numbered days",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-25.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/LK_road_sign_PHS-25.svg/120px-LK_road_sign_PHS-25.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-25.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-25.svg"
+  },
+  {
+    "id": "LK_road_sign_PHS-26",
+    "name": "No parking on even-numbered days",
+    "category": "Regulatory signs",
+    "section": "Prohibitory signs",
+    "fileName": "LK_road_sign_PHS-26.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/LK_road_sign_PHS-26.svg/120px-LK_road_sign_PHS-26.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PHS-26.svg",
+    "localFile": "assets/signs/LK_road_sign_PHS-26.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-01",
+    "name": "Width limit",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-01.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/LK_road_sign_RSS-01.svg/120px-LK_road_sign_RSS-01.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-01.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-01.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-02",
+    "name": "Height Limit",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-02.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/LK_road_sign_RSS-02.svg/120px-LK_road_sign_RSS-02.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-02.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-02.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-03",
+    "name": "Weight Limit",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-03.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/LK_road_sign_RSS-03.svg/120px-LK_road_sign_RSS-03.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-03.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-03.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-04",
+    "name": "Weight Limit on One Axle",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-04.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/LK_road_sign_RSS-04.svg/120px-LK_road_sign_RSS-04.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-04.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-04.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-05",
+    "name": "Maximum speed limit (for vehicles within built-up areas except for 3 wheelers and land vehicles)",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-05.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/LK_road_sign_RSS-05.svg/120px-LK_road_sign_RSS-05.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-05.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-05.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-06",
+    "name": "Maximum speed limit (light vehicles outside built-up areas)",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-06.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/LK_road_sign_RSS-06.svg/120px-LK_road_sign_RSS-06.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-06.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-06.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-07",
+    "name": "Maximum speed limit (heavy vehicles in non built-up areas)",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-07.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/LK_road_sign_RSS-07.svg/120px-LK_road_sign_RSS-07.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-07.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-07.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-08",
+    "name": "Maximum speed limit (3 wheelers and land vehicles in built-up and non built-up areas)",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-08.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/LK_road_sign_RSS-08.svg/120px-LK_road_sign_RSS-08.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-08.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-08.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-09",
+    "name": "Maximum speed limit (all vehicles within school areas and hospitals)",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-09.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/LK_road_sign_RSS-09.svg/120px-LK_road_sign_RSS-09.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-09.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-09.svg"
+  },
+  {
+    "id": "LK_road_sign_RSS-10",
+    "name": "Maximum speed limit ends",
+    "category": "Regulatory signs",
+    "section": "Restrictive signs",
+    "fileName": "LK_road_sign_RSS-10.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/LK_road_sign_RSS-10.svg/120px-LK_road_sign_RSS-10.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_RSS-10.svg",
+    "localFile": "assets/signs/LK_road_sign_RSS-10.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D1b-V1-1",
+    "name": "Proceed straight",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D1b-V1-1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Vienna_Convention_road_sign_D1b-V1-1.svg/120px-Vienna_Convention_road_sign_D1b-V1-1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D1b-V1-1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D1b-V1-1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D1b-V4-1",
+    "name": "Turn left ahead",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D1b-V4-1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Vienna_Convention_road_sign_D1b-V4-1.svg/120px-Vienna_Convention_road_sign_D1b-V4-1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D1b-V4-1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D1b-V4-1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D1b-V5-1",
+    "name": "Turn right ahead",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D1b-V5-1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Vienna_Convention_road_sign_D1b-V5-1.svg/120px-Vienna_Convention_road_sign_D1b-V5-1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D1b-V5-1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D1b-V5-1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D1b-V2-1",
+    "name": "Turn left",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D1b-V2-1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Vienna_Convention_road_sign_D1b-V2-1.svg/120px-Vienna_Convention_road_sign_D1b-V2-1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D1b-V2-1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D1b-V2-1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D1b-V3-1",
+    "name": "Turn right",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D1b-V3-1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Vienna_Convention_road_sign_D1b-V3-1.svg/120px-Vienna_Convention_road_sign_D1b-V3-1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D1b-V3-1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D1b-V3-1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D2b-V1-1",
+    "name": "Pass onto left",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D2b-V1-1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Vienna_Convention_road_sign_D2b-V1-1.svg/120px-Vienna_Convention_road_sign_D2b-V1-1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D2b-V1-1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D2b-V1-1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D2b-V2-1",
+    "name": "Pass onto right",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D2b-V2-1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Vienna_Convention_road_sign_D2b-V2-1.svg/120px-Vienna_Convention_road_sign_D2b-V2-1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D2b-V2-1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D2b-V2-1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_D3b-V1-LHT",
+    "name": "Roundabout",
+    "category": "Regulatory signs",
+    "section": "Mandatory signs",
+    "fileName": "Vienna_Convention_road_sign_D3b-V1-LHT.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Vienna_Convention_road_sign_D3b-V1-LHT.svg/120px-Vienna_Convention_road_sign_D3b-V1-LHT.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_D3b-V1-LHT.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_D3b-V1-LHT.svg"
+  },
+  {
+    "id": "LK_road_sign_PRS-01",
+    "name": "Stop",
+    "category": "Regulatory signs",
+    "section": "Priority signs",
+    "fileName": "LK_road_sign_PRS-01.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/LK_road_sign_PRS-01.svg/120px-LK_road_sign_PRS-01.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_PRS-01.svg",
+    "localFile": "assets/signs/LK_road_sign_PRS-01.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_B1-V1",
+    "name": "Give way (without inscription)",
+    "category": "Regulatory signs",
+    "section": "Priority signs",
+    "fileName": "Vienna_Convention_road_sign_B1-V1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Vienna_Convention_road_sign_B1-V1.svg/120px-Vienna_Convention_road_sign_B1-V1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_B1-V1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_B1-V1.svg"
+  },
+  {
+    "id": "UK_traffic_sign_602",
+    "name": "Give way (with inscription)",
+    "category": "Regulatory signs",
+    "section": "Priority signs",
+    "fileName": "UK_traffic_sign_602.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/UK_traffic_sign_602.svg/120px-UK_traffic_sign_602.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:UK_traffic_sign_602.svg",
+    "localFile": "assets/signs/UK_traffic_sign_602.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_B3-V1",
+    "name": "Priority road",
+    "category": "Regulatory signs",
+    "section": "Priority signs",
+    "fileName": "Vienna_Convention_road_sign_B3-V1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Vienna_Convention_road_sign_B3-V1.svg/120px-Vienna_Convention_road_sign_B3-V1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_B3-V1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_B3-V1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_B4-V1",
+    "name": "End of priority road",
+    "category": "Regulatory signs",
+    "section": "Priority signs",
+    "fileName": "Vienna_Convention_road_sign_B4-V1.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Vienna_Convention_road_sign_B4-V1.svg/120px-Vienna_Convention_road_sign_B4-V1.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_B4-V1.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_B4-V1.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_B5-V1-LHT",
+    "name": "Priority to oncoming traffic",
+    "category": "Regulatory signs",
+    "section": "Priority signs",
+    "fileName": "Vienna_Convention_road_sign_B5-V1-LHT.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Vienna_Convention_road_sign_B5-V1-LHT.svg/120px-Vienna_Convention_road_sign_B5-V1-LHT.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_B5-V1-LHT.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_B5-V1-LHT.svg"
+  },
+  {
+    "id": "Vienna_Convention_road_sign_B6-LHT",
+    "name": "Priority over oncoming traffic",
+    "category": "Regulatory signs",
+    "section": "Priority signs",
+    "fileName": "Vienna_Convention_road_sign_B6-LHT.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Vienna_Convention_road_sign_B6-LHT.svg/120px-Vienna_Convention_road_sign_B6-LHT.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Vienna_Convention_road_sign_B6-LHT.svg",
+    "localFile": "assets/signs/Vienna_Convention_road_sign_B6-LHT.svg"
+  },
+  {
+    "id": "LK_road_sign_APR-08",
+    "name": "School (supplementing a regulatory sign)",
+    "category": "Regulatory signs",
+    "section": "Additional panels",
+    "fileName": "LK_road_sign_APR-08.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/LK_road_sign_APR-08.svg/120px-LK_road_sign_APR-08.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_APR-08.svg",
+    "localFile": "assets/signs/LK_road_sign_APR-08.svg"
+  },
+  {
+    "id": "LK_road_sign_APR-13",
+    "name": "5.00 am - 9.00 pm (supplementing a regulatory sign)",
+    "category": "Regulatory signs",
+    "section": "Additional panels",
+    "fileName": "LK_road_sign_APR-13.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/LK_road_sign_APR-13.svg/120px-LK_road_sign_APR-13.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_APR-13.svg",
+    "localFile": "assets/signs/LK_road_sign_APR-13.svg"
+  },
+  {
+    "id": "LK_road_sign_APR-14",
+    "name": "To be affixed to signs PHS-1, PHS-2 or PHS-3 at the entry to an expressway",
+    "category": "Regulatory signs",
+    "section": "Additional panels",
+    "fileName": "LK_road_sign_APR-14.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/LK_road_sign_APR-14.svg/120px-LK_road_sign_APR-14.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_APR-14.svg",
+    "localFile": "assets/signs/LK_road_sign_APR-14.svg"
+  },
+  {
+    "id": "Beginning_of_an_administrative_area",
+    "name": "Beginning of an administrative area",
+    "category": "Directional informative signs",
+    "section": "National highways",
+    "fileName": "Beginning_of_an_administrative_area.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Beginning_of_an_administrative_area.svg/120px-Beginning_of_an_administrative_area.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Beginning_of_an_administrative_area.svg",
+    "localFile": "assets/signs/Beginning_of_an_administrative_area.svg"
+  },
+  {
+    "id": "Confirming_Distances",
+    "name": "Confirming distances",
+    "category": "Directional informative signs",
+    "section": "National highways",
+    "fileName": "Confirming_Distances.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Confirming_Distances.svg/120px-Confirming_Distances.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Confirming_Distances.svg",
+    "localFile": "assets/signs/Confirming_Distances.svg"
+  },
+  {
+    "id": "Direction_Sign_-_Provincial_Roads",
+    "name": "Direction sign",
+    "category": "Directional informative signs",
+    "section": "Provincial roads",
+    "fileName": "Direction_Sign_-_Provincial_Roads.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Direction_Sign_-_Provincial_Roads.svg/120px-Direction_Sign_-_Provincial_Roads.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Direction_Sign_-_Provincial_Roads.svg",
+    "localFile": "assets/signs/Direction_Sign_-_Provincial_Roads.svg"
+  },
+  {
+    "id": "Exit_Ramp_-_Direction_Sign",
+    "name": "Exit ramp",
+    "category": "Directional informative signs",
+    "section": "Expressways",
+    "fileName": "Exit_Ramp_-_Direction_Sign.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Exit_Ramp_-_Direction_Sign.svg/120px-Exit_Ramp_-_Direction_Sign.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Exit_Ramp_-_Direction_Sign.svg",
+    "localFile": "assets/signs/Exit_Ramp_-_Direction_Sign.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-01",
+    "name": "Pedestrian crossing",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-01.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/LK_road_sign_OSD-01.svg/120px-LK_road_sign_OSD-01.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-01.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-01.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-02",
+    "name": "One-way street",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-02.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/LK_road_sign_OSD-02.svg/120px-LK_road_sign_OSD-02.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-02.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-02.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-03",
+    "name": "Hospital",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-03.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/LK_road_sign_OSD-03.svg/120px-LK_road_sign_OSD-03.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-03.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-03.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-04",
+    "name": "Parking",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-04.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/LK_road_sign_OSD-04.svg/120px-LK_road_sign_OSD-04.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-04.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-04.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-05",
+    "name": "Parking for disabled persons",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-05.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/LK_road_sign_OSD-05.svg/120px-LK_road_sign_OSD-05.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-05.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-05.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-06",
+    "name": "Bus stop",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-06.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/LK_road_sign_OSD-06.svg/120px-LK_road_sign_OSD-06.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-06.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-06.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-07",
+    "name": "Bus lane",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-07.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/LK_road_sign_OSD-07.svg/120px-LK_road_sign_OSD-07.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-07.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-07.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-08",
+    "name": "End of bus lane",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-08.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/LK_road_sign_OSD-08.svg/120px-LK_road_sign_OSD-08.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-08.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-08.svg"
+  },
+  {
+    "id": "Sri_Lanka_Expressway_Start_Sign",
+    "name": "Expressway",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "Sri_Lanka_Expressway_Start_Sign.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/LK_road_sign_OSD-16.svg/120px-LK_road_sign_OSD-16.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Sri_Lanka_Expressway_Start_Sign.svg",
+    "localFile": "assets/signs/Sri_Lanka_Expressway_Start_Sign.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-17",
+    "name": "End of expressway",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-17.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/LK_road_sign_OSD-17.svg/120px-LK_road_sign_OSD-17.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-17.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-17.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-18",
+    "name": "Telephone",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-18.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/LK_road_sign_OSD-18.svg/120px-LK_road_sign_OSD-18.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-18.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-18.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-19",
+    "name": "Information",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-19.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/LK_road_sign_OSD-19.svg/120px-LK_road_sign_OSD-19.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-19.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-19.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-20",
+    "name": "Industral zone",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-20.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/LK_road_sign_OSD-20.svg/120px-LK_road_sign_OSD-20.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-20.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-20.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-21",
+    "name": "Restaurant",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-21.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/LK_road_sign_OSD-21.svg/120px-LK_road_sign_OSD-21.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-21.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-21.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-22",
+    "name": "Light refreshment",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-22.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/LK_road_sign_OSD-22.svg/120px-LK_road_sign_OSD-22.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-22.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-22.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-23",
+    "name": "Hotel or motel",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-23.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/LK_road_sign_OSD-23.svg/120px-LK_road_sign_OSD-23.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-23.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-23.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-24",
+    "name": "Petrol station",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-24.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/LK_road_sign_OSD-24.svg/120px-LK_road_sign_OSD-24.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-24.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-24.svg"
+  },
+  {
+    "id": "LK_road_sign_OSD-25",
+    "name": "Breakdown service",
+    "category": "Directional informative signs",
+    "section": "Other signs useful for drivers",
+    "fileName": "LK_road_sign_OSD-25.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/LK_road_sign_OSD-25.svg/120px-LK_road_sign_OSD-25.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:LK_road_sign_OSD-25.svg",
+    "localFile": "assets/signs/LK_road_sign_OSD-25.svg"
+  },
+  {
+    "id": "4_1_7",
+    "name": "Overtaking line",
+    "category": "Road markings",
+    "section": "Road markings",
+    "fileName": "4_1_7.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/4_1_7.svg/120px-4_1_7.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:4_1_7.svg",
+    "localFile": "assets/signs/4_1_7.svg"
+  },
+  {
+    "id": "4_1_2",
+    "name": "Warning line",
+    "category": "Road markings",
+    "section": "Road markings",
+    "fileName": "4_1_2.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/4_1_2.svg/120px-4_1_2.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:4_1_2.svg",
+    "localFile": "assets/signs/4_1_2.svg"
+  },
+  {
+    "id": "Swedish_road_sign_4_2_3",
+    "name": "Pedestrian crossing",
+    "category": "Road markings",
+    "section": "Road markings",
+    "fileName": "Swedish_road_sign_4_2_3.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Swedish_road_sign_4_2_3.svg/120px-Swedish_road_sign_4_2_3.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Swedish_road_sign_4_2_3.svg",
+    "localFile": "assets/signs/Swedish_road_sign_4_2_3.svg"
+  },
+  {
+    "id": "Swedish_road_sign_4_2_4",
+    "name": "Cycle crossing",
+    "category": "Road markings",
+    "section": "Road markings",
+    "fileName": "Swedish_road_sign_4_2_4.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Swedish_road_sign_4_2_4.svg/120px-Swedish_road_sign_4_2_4.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Swedish_road_sign_4_2_4.svg",
+    "localFile": "assets/signs/Swedish_road_sign_4_2_4.svg"
+  },
+  {
+    "id": "Traffic_lights_dark_red",
+    "name": "Red traffic light",
+    "category": "Traffic light signals",
+    "section": "Traffic light signals",
+    "fileName": "Traffic_lights_dark_red.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Traffic_lights_dark_red.svg/60px-Traffic_lights_dark_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Traffic_lights_dark_red.svg",
+    "localFile": "assets/signs/Traffic_lights_dark_red.svg"
+  },
+  {
+    "id": "Traffic_lights_dark_red-yellow",
+    "name": "Red & yellow traffic light",
+    "category": "Traffic light signals",
+    "section": "Traffic light signals",
+    "fileName": "Traffic_lights_dark_red-yellow.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Traffic_lights_dark_red-yellow.svg/60px-Traffic_lights_dark_red-yellow.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Traffic_lights_dark_red-yellow.svg",
+    "localFile": "assets/signs/Traffic_lights_dark_red-yellow.svg"
+  },
+  {
+    "id": "Traffic_lights_dark_green",
+    "name": "Green traffic light",
+    "category": "Traffic light signals",
+    "section": "Traffic light signals",
+    "fileName": "Traffic_lights_dark_green.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Traffic_lights_dark_green.svg/60px-Traffic_lights_dark_green.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Traffic_lights_dark_green.svg",
+    "localFile": "assets/signs/Traffic_lights_dark_green.svg"
+  },
+  {
+    "id": "Traffic_lights_dark_yellow",
+    "name": "Yellow traffic light",
+    "category": "Traffic light signals",
+    "section": "Traffic light signals",
+    "fileName": "Traffic_lights_dark_yellow.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Traffic_lights_dark_yellow.svg/60px-Traffic_lights_dark_yellow.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Traffic_lights_dark_yellow.svg",
+    "localFile": "assets/signs/Traffic_lights_dark_yellow.svg"
+  },
+  {
+    "id": "Sygnalizator_S-5",
+    "name": "Light signals for pedestrians",
+    "category": "Traffic light signals",
+    "section": "Light signals for pedestrians",
+    "fileName": "Sygnalizator_S-5.svg",
+    "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Sygnalizator_S-5.svg/60px-Sygnalizator_S-5.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "fileHref": "https://en.wikipedia.org/wiki/File:Sygnalizator_S-5.svg",
+    "localFile": "assets/signs/Sygnalizator_S-5.svg"
+  }
+]

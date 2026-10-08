@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1:1 DMT Written Exam Simulator - Sri Lanka Driving License</title>
+  <meta name="description" content="Realistic 1:1 simulation of the Sri Lanka Department of Motor Traffic (DMT) driving license written theory examination. 40 MCQs, 60-minute timer, pass mark 30/40.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .hidden { display: none !important; }
+    .review-filter-btn {
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--border);
+      background: var(--bg-main);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .review-filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    #btn-flag-question.active {
+      background: var(--accent-light);
+      color: #b45309;
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🇱🇰</div>
+        <div class="brand-text">
+          <span class="brand-title">Sri Lanka Driving License</span>
+          <span class="brand-subtitle">1:1 Exam Simulator</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">📖 Procedure Guide</a></li>
+        <li><a href="signs.html" class="nav-link">🚸 Road Signs (134)</a></li>
+        <li><a href="quiz.html" class="nav-link active">📝 1:1 Written Exam</a></li>
+        <li><a href="questions.html" class="nav-link">📚 Question Bank (100)</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="theme-toggle-btn" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button id="mobile-menu-toggle" class="btn-icon mobile-menu-btn" title="Open Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Exam Header Bar (Active during test) -->
+  <div id="quiz-header-bar" class="quiz-header-bar hidden">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div id="quiz-timer" class="quiz-timer">⏱️ 60:00</div>
+      <div>
+        <span id="current-q-num" style="font-weight: 700; color: var(--text-main);">Question 1</span>
+        <span id="total-q-count" style="font-size: 0.82rem; color: var(--text-muted);">of 40</span>
+      </div>
+    </div>
+
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-text">
+        <span>Completion Progress</span>
+        <span id="current-q-category" class="badge badge-blue">Road Signs</span>
+      </div>
+      <div class="quiz-progress-bar">
+        <div id="quiz-progress-fill" class="quiz-progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 0.75rem; align-items: center;">
+      <button id="btn-flag-question" class="btn-icon" style="width: auto; padding: 0 0.85rem; font-size: 0.85rem; gap: 0.35rem;">
+        🏳️ Flag for Review
+      </button>
+      <button id="btn-submit-exam" class="btn-cta" style="background: var(--success); padding: 0.45rem 1rem;">
+        ✓ Submit Exam
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- SETUP CARD (Shown before starting exam) -->
+    <section class="section" id="quiz-setup-card">
+      <div class="container" style="max-width: 850px;">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="section-tag">Official Testing Suite</span>
+          <h1 class="section-title">1:1 DMT Written Examination Simulator</h1>
+          <p class="section-desc">
+            Mirrors the real computerized touchscreen testing environment at Werahera and district centers. 40 multiple-choice questions, 60 minutes, pass mark 30/40 (75%).
+          </p>
+        </div>
+
+        <div class="tool-card">
+          <div class="info-alert" style="margin-bottom: 1.75rem;">
+            <strong>📜 DMT Testing Rules:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1.25rem; font-size: 0.88rem; line-height: 1.5;">
+              <li>The official exam comprises exactly <strong>40 multiple-choice questions</strong>.</li>
+              <li>You have <strong>60 minutes</strong> to complete the paper.</li>
+              <li>You must score at least <strong>30 out of 40 (75%)</strong> to be issued a Learner's Permit.</li>
+              <li>There is no negative marking for incorrect guesses.</li>
+            </ul>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem;">
+            <!-- Mode selection -->
+            <div>
+              <label class="form-label" style="font-size: 0.95rem; margin-bottom: 0.75rem;">1. Choose Testing Mode</label>
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <label class="check-item" style="padding: 0.75rem;">
+                  <input type="radio" name="quiz-mode-select" value="exam" checked>
+                  <div class="check-item-text">
+                    <span class="check-item-title">Realistic Exam Mode</span>
+                    <span class="check-item-desc">60-minute countdown timer, review at end, pass/fail evaluation.</span>
+                  </div>
+                </label>
+
+                <label class="check-item" style="padding: 0.75rem;">
+                  <input type="radio" name="quiz-mode-select" value="practice">
+                  <div class="check-item-text">
+                    <span class="check-item-title">Practice & Training Mode</span>
+                    <span class="check-item-desc">Instant correct/wrong feedback with immediate explanations.</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Paper selection -->
+            <div>
+              <label class="form-label" style="font-size: 0.95rem; margin-bottom: 0.75rem;">2. Choose Question Set</label>
+              <div class="form-group">
+                <select id="quiz-paper-select" class="form-select" style="padding: 0.75rem;">
+                  <option value="random40" selected>Balanced Randomized 40 Questions (Official DMT Mix)</option>
+                  <option value="paper1">DMT Model Paper 1 (Official 40-Q Set)</option>
+                  <option value="paper2">DMT Model Paper 2 (Official 40-Q Set)</option>
+                  <option value="topic">Topic-Specific Focus Practice</option>
+                </select>
+              </div>
+
+              <div id="topic-select-group" class="form-group" style="display: none; margin-top: 1rem;">
+                <label class="form-label" for="quiz-topic-select">Select Focus Topic</label>
+                <select id="quiz-topic-select" class="form-select">
+                  <option value="all">All Topics Combined</option>
+                  <option value="Road Signs">Road Signs & Markings</option>
+                  <option value="Rules of the Road">Rules of the Road & Right of Way</option>
+                  <option value="Speed Limits">Speed Limits & Expressways</option>
+                  <option value="Vehicle Safety">Vehicle Safety & Mechanics</option>
+                  <option value="Licensing">Licensing & Legal Regulations</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+            <button id="start-quiz-btn" class="btn-hero-primary" style="margin: 0 auto; width: 100%; max-width: 320px; justify-content: center;">
+              <span>Begin Examination Now</span>
+              <span>→</span>
+            </button>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem;">
+              Keyboard shortcuts supported: 1-4 or A-D to select, Left/Right arrow keys to navigate, F to flag.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVE QUIZ WORKSPACE (Hidden initially) -->
+    <section class="section hidden" id="quiz-workspace" style="padding-top: 1.5rem;">
+      <div class="quiz-layout">
+        <!-- Question Column -->
+        <div class="question-column">
+          <div class="question-box">
+            <div class="question-top">
+              <span class="question-number-badge" id="badge-question-tag">DMT Multiple Choice Question</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Select one correct option</span>
+            </div>
+
+            <!-- Sign Image Preview (if question has sign) -->
+            <div id="question-sign-box" class="question-sign-preview" style="display: none;"></div>
+
+            <!-- Question Statement -->
+            <h2 class="question-text" id="question-text">Loading question...</h2>
+
+            <!-- Options (A, B, C, D) -->
+            <div class="options-list" id="options-list"></div>
+
+            <!-- Practice mode inline explanation -->
+            <div id="practice-explanation-box" class="question-explanation-box" style="display: none;"></div>
+
+            <!-- Footer Navigation -->
+            <div class="quiz-footer-nav">
+              <button id="btn-prev-q" class="btn-hero-secondary" style="padding: 0.6rem 1.25rem;">
+                ← Previous
+              </button>
+              <button id="btn-next-q" class="btn-hero-primary" style="padding: 0.6rem 1.5rem;">
+                Next →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Palette Column -->
+        <div class="palette-column">
+          <div class="palette-card">
+            <div class="palette-title">Question Navigator</div>
+            <div class="palette-grid" id="palette-grid"></div>
+
+            <div class="palette-legend">
+              <div class="legend-item">
+                <div class="legend-color" style="background: var(--primary);"></div>
+                <span>Answered</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background: var(--accent);"></div>
+                <span>Flagged for Review</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background: var(--bg-main); border: 1px solid var(--border-strong);"></div>
+                <span>Unanswered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBMISSION CONFIRMATION MODAL -->
+    <div class="modal-overlay" id="submit-confirm-modal">
+      <div class="modal-content">
+        <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem;">Submit Exam Paper?</h3>
+        <div id="modal-submit-summary"></div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+          Once submitted, your final score will be calculated and cannot be altered. You will be able to review all 40 questions with comprehensive rationales.
+        </p>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button id="modal-cancel-btn" class="btn-hero-secondary" style="padding: 0.5rem 1.2rem;">
+            Continue Test
+          </button>
+          <button id="modal-confirm-submit-btn" class="btn-cta" style="background: var(--success); padding: 0.5rem 1.5rem;">
+            Yes, Submit Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS SCREEN (Hidden initially) -->
+    <section class="section hidden" id="quiz-results-card">
+      <div class="container">
+        <div class="results-card">
+          <div id="result-badge-banner" class="result-badge-banner passed">
+            <span>🎉</span>
+            <span>PASSED - CONGRATULATIONS!</span>
+          </div>
+
+          <div id="result-score-display" class="result-score-circle">
+            35 <span class="total">/ 40</span>
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <span id="result-percentage" class="badge badge-blue" style="font-size: 1rem; padding: 0.4rem 1rem;">88% Accuracy</span>
+            <span class="badge badge-amber" style="font-size: 1rem; padding: 0.4rem 1rem;">Pass Standard: ≥ 75% (30/40)</span>
+          </div>
+
+          <!-- Summary boxes -->
+          <div class="result-summary-grid">
+            <div class="summary-box">
+              <span class="summary-box-label">Time Taken</span>
+              <div id="result-time-taken" class="summary-box-val">24m 10s</div>
+            </div>
+            <div class="summary-box">
+              <span class="summary-box-label">Passing Status</span>
+              <div id="result-pass-status" class="summary-box-val" style="color: var(--success);">Eligible for L-Permit</div>
+            </div>
+            <div class="summary-box">
+              <span class="summary-box-label">Next DMT Step</span>
+              <div class="summary-box-val" style="font-size: 1.05rem;">Collect MTA 3 Permit</div>
+            </div>
+          </div>
+
+          <!-- Category Breakdown -->
+          <div class="category-breakdown">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem; text-align: left;">Performance by Knowledge Area</h3>
+            <div id="result-category-bars"></div>
+          </div>
+
+          <!-- Action buttons -->
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+            <button onclick="location.reload()" class="btn-hero-primary">
+              <span>Retake Exam (New Questions)</span>
+              <span>🔄</span>
+            </button>
+            <button onclick="window.print()" class="btn-hero-secondary">
+              <span>Print Result Certificate</span>
+              <span>🖨️</span>
+            </button>
+            <a href="index.html" class="btn-hero-secondary">
+              <span>Return to Procedure Guide</span>
+              <span>🏠</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Detailed Review Section -->
+        <div style="max-width: 850px; margin: 3rem auto 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.4rem; font-weight: 800;">Complete Question Review & Rationale</h3>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="review-filter-btn active" data-filter="all">All Questions</button>
+              <button class="review-filter-btn" data-filter="wrong">Incorrect Only</button>
+              <button class="review-filter-btn" data-filter="flagged">Flagged</button>
+            </div>
+          </div>
+
+          <div id="result-review-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>© 2026 Sri Lanka Driving License Portal. Free interactive study platform for the DMT theory test.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/signs-data.js"></script>
+  <script src="assets/js/questions-data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/quiz.js"></script>
+</body>
+</html>

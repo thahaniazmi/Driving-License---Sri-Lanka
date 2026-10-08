@@ -20,13 +20,13 @@
     }
     .review-filter-btn.active {
       background: var(--primary);
-      color: #fff;
+      color: #000000;
       border-color: var(--primary);
     }
     #btn-flag-question.active {
-      background: var(--accent-light);
-      color: #b45309;
-      border-color: var(--accent);
+      background: rgba(239, 68, 68, 0.18);
+      color: var(--danger);
+      border-color: var(--danger);
     }
   </style>
 </head>
@@ -85,7 +85,7 @@
       <button id="btn-flag-question" class="btn-icon" style="width: auto; padding: 0 0.85rem; font-size: 0.85rem; gap: 0.35rem;">
         🏳️ Flag for Review
       </button>
-      <button id="btn-submit-exam" class="btn-cta" style="background: var(--success); padding: 0.45rem 1rem;">
+      <button id="btn-submit-exam" class="btn-cta" style="background: var(--primary); color: #000000; padding: 0.45rem 1rem;">
         ✓ Submit Exam
       </button>
     </div>
@@ -96,7 +96,6 @@
     <section class="section" id="quiz-setup-card">
       <div class="container" style="max-width: 850px;">
         <div class="section-header" style="margin-bottom: 2rem;">
-          <span class="section-tag">Official Testing Suite</span>
           <h1 class="section-title">1:1 DMT Written Examination Simulator</h1>
           <p class="section-desc">
             Mirrors the real computerized touchscreen testing environment at Werahera and district centers. 40 multiple-choice questions, 60 minutes, pass mark 30/40 (75%).
@@ -249,7 +248,7 @@
           <button id="modal-cancel-btn" class="btn-hero-secondary" style="padding: 0.5rem 1.2rem;">
             Continue Test
           </button>
-          <button id="modal-confirm-submit-btn" class="btn-cta" style="background: var(--success); padding: 0.5rem 1.5rem;">
+          <button id="modal-confirm-submit-btn" class="btn-cta" style="background: var(--primary); color: #000000; padding: 0.5rem 1.5rem;">
             Yes, Submit Now
           </button>
         </div>
@@ -282,7 +281,7 @@
             </div>
             <div class="summary-box">
               <span class="summary-box-label">Passing Status</span>
-              <div id="result-pass-status" class="summary-box-val" style="color: var(--success);">Eligible for L-Permit</div>
+              <div id="result-pass-status" class="summary-box-val" style="color: var(--primary);">Eligible for L-Permit</div>
             </div>
             <div class="summary-box">
               <span class="summary-box-label">Next DMT Step</span>

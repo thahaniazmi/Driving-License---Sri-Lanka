@@ -28,12 +28,16 @@ const QuestionsExplorer = {
   },
 
   bindControls() {
-    // Search input
+    // Search input with debounce to prevent DOM layout thrashing
     const searchInput = document.getElementById('qbank-search-input');
     if (searchInput) {
+      let searchTimeout = null;
       searchInput.addEventListener('input', (e) => {
-        this.searchQuery = e.target.value.trim().toLowerCase();
-        this.renderQuestions();
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          this.searchQuery = e.target.value.trim().toLowerCase();
+          this.renderQuestions();
+        }, 180);
       });
     }
 
@@ -72,6 +76,18 @@ const QuestionsExplorer = {
         this.renderQuestions();
       });
     }
+
+    // Event delegation for bookmark buttons
+    const container = document.getElementById('questions-list-container');
+    if (container) {
+      container.addEventListener('click', (e) => {
+        const bmBtn = e.target.closest('.q-bm-btn');
+        if (bmBtn) {
+          const qId = bmBtn.dataset.qid;
+          if (qId) this.toggleBookmark(qId);
+        }
+      });
+    }
   },
 
   updateCounters() {
@@ -90,7 +106,17 @@ const QuestionsExplorer = {
     localStorage.setItem('sldl_bookmarks', JSON.stringify([...this.bookmarks]));
     this.updateCounters();
     AudioEngine.playClick();
-    this.renderQuestions();
+
+    if (this.bookmarkedOnly) {
+      this.renderQuestions();
+    } else {
+      // High-performance in-place button update without rebuilding DOM
+      const bmBtn = document.getElementById(`bm-btn-${id}`);
+      if (bmBtn) {
+        const isBookmarked = this.bookmarks.has(id);
+        bmBtn.innerHTML = isBookmarked ? '★ Bookmarked' : '☆ Bookmark';
+      }
+    }
   },
 
   selectOption(qId, optIdx) {
@@ -103,7 +129,51 @@ const QuestionsExplorer = {
         AudioEngine.playError();
       }
     }
-    this.renderQuestions();
+    // High-performance in-place card update
+    this.updateQuestionCard(qId);
+  },
+
+  updateQuestionCard(qId) {
+    const card = document.getElementById(`q-card-${qId}`);
+    if (!card) {
+      this.renderQuestions();
+      return;
+    }
+    const q = this.questions.find(item => item.id === qId);
+    if (!q) return;
+
+    const userSelected = this.interactiveAnswers[qId];
+    const letters = ['A', 'B', 'C', 'D'];
+    const optionsWrap = card.querySelector('.q-options-wrap');
+    if (optionsWrap) {
+      optionsWrap.innerHTML = q.options.map((opt, oIdx) => {
+        let style = 'padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.92rem;';
+        if (oIdx === q.answer) {
+          style += ' border-color: var(--success); background: var(--success-light); color: #047857; font-weight: 700;';
+        } else if (oIdx === userSelected) {
+          style += ' border-color: var(--danger); background: var(--danger-light); color: #b91c1c;';
+        }
+        return `
+          <div class="option-item" style="${style}" onclick="QuestionsExplorer.selectOption('${q.id}', ${oIdx})">
+            <div class="option-letter" style="width: 28px; height: 28px; font-size: 0.82rem;">${letters[oIdx]}</div>
+            <div style="flex: 1;">${opt}</div>
+            ${oIdx === q.answer ? '<span class="badge badge-green" style="font-size: 0.75rem;">Correct</span>' : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    const rationaleWrap = card.querySelector('.q-rationale-wrap');
+    if (rationaleWrap) {
+      rationaleWrap.innerHTML = `
+        <div class="info-alert" style="margin-top: 1rem; font-size: 0.88rem;">
+          <strong>Rationale:</strong> ${q.explanation}
+          <div style="margin-top: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">
+            <strong>Reference:</strong> ${q.dmtReference || 'DMT Highway Code'}
+          </div>
+        </div>
+      `;
+    }
   },
 
   getFilteredQuestions() {
@@ -137,8 +207,6 @@ const QuestionsExplorer = {
     if (!container) return;
 
     const filtered = this.getFilteredQuestions();
-    container.innerHTML = '';
-
     const counter = document.getElementById('qbank-showing-count');
     if (counter) counter.textContent = `Showing ${filtered.length} of ${this.questions.length} Questions`;
 
@@ -155,82 +223,76 @@ const QuestionsExplorer = {
 
     const letters = ['A', 'B', 'C', 'D'];
 
-    filtered.forEach((q, idx) => {
-      const card = document.createElement('div');
-      card.className = 'tool-card';
-      card.style.marginBottom = '1.5rem';
-
+    // Single-pass string concatenation for fast rendering
+    const cardsHtml = filtered.map(q => {
       const isBookmarked = this.bookmarks.has(q.id);
       const userSelected = this.interactiveAnswers[q.id];
       const hasAnswered = userSelected !== undefined;
       const reveal = this.showAllAnswers || hasAnswered;
 
-      card.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span class="badge badge-blue">${q.id}</span>
-            <span class="badge badge-gray">${q.category}</span>
-          </div>
-          <button class="btn-icon" style="width: auto; padding: 0 0.6rem; height: 32px; font-size: 0.8rem; gap: 0.3rem;" id="bm-btn-${q.id}">
-            ${isBookmarked ? '★ Bookmarked' : '☆ Bookmark'}
-          </button>
-        </div>
-
-        ${q.signImage ? `
-          <div style="max-width: 140px; margin: 0.5rem 0 1rem; padding: 0.5rem; background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-md);">
-            <img src="${q.signImage}" alt="Road Sign" style="max-height: 100px; object-fit: contain; margin: 0 auto;">
-          </div>
-        ` : ''}
-
-        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem;">${q.question}</h3>
-
-        <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
-          ${q.options.map((opt, oIdx) => {
-            let itemClass = 'option-item';
-            let style = 'padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.92rem;';
-
-            if (reveal) {
-              if (oIdx === q.answer) {
-                style += ' border-color: var(--success); background: var(--success-light); color: #065f46; font-weight: 700;';
-              } else if (oIdx === userSelected) {
-                style += ' border-color: var(--danger); background: var(--danger-light); color: #991b1b;';
-              }
-            } else if (oIdx === userSelected) {
-              style += ' border-color: var(--primary); background: var(--primary-light);';
-            }
-
-            return `
-              <div class="option-item" style="${style}" onclick="QuestionsExplorer.selectOption('${q.id}', ${oIdx})">
-                <div class="option-letter" style="width: 28px; height: 28px; font-size: 0.82rem;">${letters[oIdx]}</div>
-                <div style="flex: 1;">${opt}</div>
-                ${reveal && oIdx === q.answer ? '<span class="badge badge-green" style="font-size: 0.75rem;">Correct</span>' : ''}
-              </div>
-            `;
-          }).join('')}
-        </div>
-
-        ${reveal ? `
-          <div class="info-alert" style="margin-top: 1rem; font-size: 0.88rem;">
-            <strong>Rationale:</strong> ${q.explanation}
-            <div style="margin-top: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">
-              <strong>Reference:</strong> ${q.dmtReference || 'DMT Highway Code'}
+      return `
+        <div id="q-card-${q.id}" class="tool-card question-bank-item" style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="badge badge-blue">${q.id}</span>
+              <span class="badge badge-gray">${q.category}</span>
             </div>
+            <button class="btn-icon q-bm-btn" style="width: auto; padding: 0 0.6rem; height: 32px; font-size: 0.8rem; gap: 0.3rem;" id="bm-btn-${q.id}" data-qid="${q.id}">
+              ${isBookmarked ? '★ Bookmarked' : '☆ Bookmark'}
+            </button>
           </div>
-        ` : `
-          <div style="font-size: 0.82rem; color: var(--text-muted); text-align: right; margin-top: 0.5rem;">
-            Click any option above to test your answer
+
+          ${q.signImage ? `
+            <div style="max-width: 140px; margin: 0.5rem 0 1rem; padding: 0.5rem; background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <img src="${q.signImage}" alt="Road Sign" width="100" height="80" style="max-height: 100px; object-fit: contain; margin: 0 auto;" loading="lazy">
+            </div>
+          ` : ''}
+
+          <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem;">${q.question}</h3>
+
+          <div class="q-options-wrap" style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
+            ${q.options.map((opt, oIdx) => {
+              let style = 'padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.92rem;';
+
+              if (reveal) {
+                if (oIdx === q.answer) {
+                  style += ' border-color: var(--primary); background: rgba(250, 204, 21, 0.16); color: var(--primary); font-weight: 700;';
+                } else if (oIdx === userSelected) {
+                  style += ' border-color: var(--danger); background: rgba(239, 68, 68, 0.16); color: var(--danger);';
+                }
+              } else if (oIdx === userSelected) {
+                style += ' border-color: var(--primary); background: rgba(250, 204, 21, 0.14); color: var(--text-main);';
+              }
+
+              return `
+                <div class="option-item" style="${style}" onclick="QuestionsExplorer.selectOption('${q.id}', ${oIdx})">
+                  <div class="option-letter" style="width: 28px; height: 28px; font-size: 0.82rem;">${letters[oIdx]}</div>
+                  <div style="flex: 1;">${opt}</div>
+                  ${reveal && oIdx === q.answer ? '<span class="badge badge-yellow" style="font-size: 0.75rem;">Correct</span>' : ''}
+                </div>
+              `;
+            }).join('')}
           </div>
-        `}
+
+          <div class="q-rationale-wrap">
+            ${reveal ? `
+              <div class="info-alert" style="margin-top: 1rem; font-size: 0.88rem;">
+                <strong>Rationale:</strong> ${q.explanation}
+                <div style="margin-top: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">
+                  <strong>Reference:</strong> ${q.dmtReference || 'DMT Highway Code'}
+                </div>
+              </div>
+            ` : `
+              <div style="font-size: 0.82rem; color: var(--text-muted); text-align: right; margin-top: 0.5rem;">
+                Click any option above to test your answer
+              </div>
+            `}
+          </div>
+        </div>
       `;
+    }).join('');
 
-      // Bookmark button event
-      const bmBtn = card.querySelector(`#bm-btn-${q.id}`);
-      if (bmBtn) {
-        bmBtn.addEventListener('click', () => this.toggleBookmark(q.id));
-      }
-
-      container.appendChild(card);
-    });
+    container.innerHTML = cardsHtml;
   }
 };
 

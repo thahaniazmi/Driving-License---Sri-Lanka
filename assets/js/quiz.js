@@ -225,7 +225,7 @@ const QuizEngine = {
     if (signBox) {
       if (q.signImage) {
         signBox.style.display = 'flex';
-        signBox.innerHTML = `<img src="${q.signImage}" alt="Road Sign" loading="lazy">`;
+        signBox.innerHTML = `<img src="${q.signImage}" alt="Road Sign" width="120" height="120" loading="lazy">`;
       } else {
         signBox.style.display = 'none';
         signBox.innerHTML = '';
@@ -274,7 +274,7 @@ const QuizEngine = {
         expBox.style.display = 'block';
         const isRight = selected === q.answer;
         expBox.innerHTML = `
-          <div style="font-weight: 700; color: ${isRight ? 'var(--success)' : 'var(--danger)'}; margin-bottom: 0.35rem;">
+          <div style="font-weight: 700; color: ${isRight ? 'var(--primary)' : 'var(--danger)'}; margin-bottom: 0.35rem;">
             ${isRight ? '✓ Correct Answer!' : '✗ Incorrect Answer'}
           </div>
           <p style="margin-bottom: 0.5rem; color: var(--text-main);">${q.explanation}</p>
@@ -356,22 +356,24 @@ const QuizEngine = {
   renderQuestionPalette() {
     const palette = document.getElementById('palette-grid');
     if (!palette) return;
-    palette.innerHTML = '';
 
-    this.questions.forEach((q, idx) => {
-      const btn = document.createElement('button');
-      btn.className = 'palette-btn';
-      btn.id = `palette-btn-${idx}`;
-      btn.textContent = idx + 1;
-
-      btn.addEventListener('click', () => {
-        this.currentIndex = idx;
-        AudioEngine.playClick();
-        this.renderCurrentQuestion();
+    if (!this.paletteBound) {
+      palette.addEventListener('click', (e) => {
+        const btn = e.target.closest('.palette-btn');
+        if (!btn) return;
+        const idx = parseInt(btn.dataset.idx, 10);
+        if (!isNaN(idx)) {
+          this.currentIndex = idx;
+          AudioEngine.playClick();
+          this.renderCurrentQuestion();
+        }
       });
+      this.paletteBound = true;
+    }
 
-      palette.appendChild(btn);
-    });
+    palette.innerHTML = this.questions.map((q, idx) =>
+      `<button class="palette-btn" id="palette-btn-${idx}" data-idx="${idx}">${idx + 1}</button>`
+    ).join('');
 
     this.updateAllPaletteButtons();
   },
@@ -517,7 +519,7 @@ const QuizEngine = {
             <span>${stats.correct} / ${stats.total} (${catPct}%)</span>
           </div>
           <div class="category-bar-bg">
-            <div class="category-bar-fill" style="width: ${catPct}%; background: ${catPct >= 75 ? 'var(--success)' : 'var(--danger)'};"></div>
+            <div class="category-bar-fill" style="width: ${catPct}%; background: ${catPct >= 75 ? 'var(--primary)' : 'var(--danger)'};"></div>
           </div>
         `;
         catContainer.appendChild(row);
@@ -546,11 +548,11 @@ const QuizEngine = {
       const item = document.createElement('div');
       item.className = 'tool-card';
       item.style.marginBottom = '1.25rem';
-      item.style.borderLeft = `5px solid ${isCorrect ? 'var(--success)' : 'var(--danger)'}`;
+      item.style.borderLeft = `5px solid ${isCorrect ? 'var(--primary)' : 'var(--danger)'}`;
 
       item.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-          <span class="badge ${isCorrect ? 'badge-green' : 'badge-red'}">
+          <span class="badge ${isCorrect ? 'badge-yellow' : 'badge-red'}">
             ${isCorrect ? '✓ Correct' : '✗ Incorrect'} • Question ${idx + 1}
           </span>
           <span style="font-size: 0.8rem; color: var(--text-muted);">${q.category}</span>
@@ -568,9 +570,9 @@ const QuizEngine = {
           ${q.options.map((opt, oIdx) => {
             let style = 'padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.9rem;';
             if (oIdx === q.answer) {
-              style += ' background: var(--success-light); color: #065f46; font-weight: 700;';
+              style += ' background: rgba(250, 204, 21, 0.16); color: var(--primary); font-weight: 700; border: 1px solid rgba(250, 204, 21, 0.35);';
             } else if (oIdx === userChoice) {
-              style += ' background: var(--danger-light); color: #991b1b; font-weight: 600; text-decoration: line-through;';
+              style += ' background: rgba(239, 68, 68, 0.16); color: var(--danger); font-weight: 600; text-decoration: line-through; border: 1px solid rgba(239, 68, 68, 0.35);';
             } else {
               style += ' color: var(--text-muted);';
             }

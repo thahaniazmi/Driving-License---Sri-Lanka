@@ -26,12 +26,45 @@ const SignsManager = {
   },
 
   bindControls() {
-    // Search input
+    // Search input with debounce to prevent DOM layout thrashing
     const searchInput = document.getElementById('signs-search-input');
     if (searchInput) {
+      let debounceTimer = null;
       searchInput.addEventListener('input', (e) => {
-        this.searchQuery = e.target.value.trim().toLowerCase();
-        this.renderSignsGrid();
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          this.searchQuery = e.target.value.trim().toLowerCase();
+          this.renderSignsGrid();
+        }, 150);
+      });
+    }
+
+    // Grid event delegation for high performance (1 listener instead of 134)
+    const grid = document.getElementById('signs-grid');
+    if (grid) {
+      grid.addEventListener('click', (e) => {
+        const card = e.target.closest('.sign-card');
+        if (!card) return;
+        const signId = card.dataset.signId;
+        const sign = this.signs.find(s => s.id === signId);
+        if (sign) {
+          this.openModal(sign);
+          AudioEngine.playClick();
+        }
+      });
+      grid.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const card = e.target.closest('.sign-card');
+          if (card) {
+            e.preventDefault();
+            const signId = card.dataset.signId;
+            const sign = this.signs.find(s => s.id === signId);
+            if (sign) {
+              this.openModal(sign);
+              AudioEngine.playClick();
+            }
+          }
+        }
       });
     }
 
@@ -151,8 +184,6 @@ const SignsManager = {
     if (!grid) return;
 
     const filtered = this.getFilteredSigns();
-    grid.innerHTML = '';
-
     const counter = document.getElementById('filtered-signs-count');
     if (counter) counter.textContent = `Showing ${filtered.length} of ${this.signs.length} Signs`;
 
@@ -167,28 +198,23 @@ const SignsManager = {
       return;
     }
 
-    filtered.forEach(sign => {
-      const card = document.createElement('div');
-      card.className = 'sign-card';
-      
+    // High performance single-pass HTML injection
+    const htmlParts = filtered.map(sign => {
       const badgeClass = this.getBadgeClass(sign.categoryBadge);
-
-      card.innerHTML = `
-        <div class="sign-card-code">${sign.id.replace('LK_Road_sign_', '').replace('LK_road_sign_', '')}</div>
-        <div class="sign-img-container">
-          <img src="${sign.localFile}" alt="${sign.name}" loading="lazy">
+      const code = sign.id.replace('LK_Road_sign_', '').replace('LK_road_sign_', '');
+      return `
+        <div class="sign-card" data-sign-id="${sign.id}" tabindex="0" role="button" aria-label="${sign.name} (${code})">
+          <div class="sign-card-code">${code}</div>
+          <div class="sign-img-container">
+            <img src="${sign.localFile}" alt="${sign.name}" width="100" height="100" loading="lazy">
+          </div>
+          <div class="sign-card-title">${sign.name}</div>
+          <span class="sign-card-cat badge ${badgeClass}">${sign.categoryBadge || 'Sign'}</span>
         </div>
-        <div class="sign-card-title">${sign.name}</div>
-        <span class="sign-card-cat badge ${badgeClass}">${sign.categoryBadge || 'Sign'}</span>
       `;
-
-      card.addEventListener('click', () => {
-        this.openModal(sign);
-        AudioEngine.playClick();
-      });
-
-      grid.appendChild(card);
     });
+
+    grid.innerHTML = htmlParts.join('');
   },
 
   getBadgeClass(badge) {

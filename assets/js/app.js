@@ -74,8 +74,7 @@ const AudioEngine = {
 // Theme Management
 const ThemeManager = {
   init() {
-    const savedTheme = localStorage.getItem('sldl_theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const savedTheme = localStorage.getItem('sldl_theme') || 'dark';
     this.applyTheme(savedTheme);
 
     const toggleBtn = document.getElementById('theme-toggle-btn');

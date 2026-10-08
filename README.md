@@ -52,10 +52,24 @@ This folder contains a complete interactive web application designed to guide ca
 
 ## 🚀 How to Run the Website
 
-Since the entire application is built using modern standards with zero external runtime dependencies:
+Since the entire application is built using modern web standards with zero external runtime dependencies:
 
 1. Simply double-click [`index.html`](index.html) (or open it with Google Chrome, Microsoft Edge, Firefox, or Safari).
-2. All 134 road signs are stored locally in `assets/signs/`, so the entire application works **100% offline without requiring an active internet connection**.
+2. The entire application runs **100% offline**.
+
+### 🚸 Synchronizing High-Definition Vector Road Signs (134 SVGs)
+
+The repository includes a dedicated vector synchronizer that queries the **Wikimedia Commons MediaWiki API** (`action=query&prop=imageinfo`) with a polite User-Agent to download authentic, infinite-resolution vector `.svg` road signs directly from official Gazette and RDA standards:
+
+- **Windows One-Click**: Simply double-click [`download_signs.bat`](download_signs.bat) in the project root.
+- **Node.js Terminal**: Run:
+  ```bash
+  node download_signs.js
+  ```
+The synchronizer will automatically:
+- Query official file endpoints in batches of 40.
+- Check XML/SVG integrity (`<svg>` tags, non-raster validation).
+- Save crisp vector files into `assets/signs/`.
 
 ---
 

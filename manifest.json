@@ -1,0 +1,26 @@
+{
+  "name": "Sri Lanka Driving License Guide & Exam Simulator",
+  "short_name": "SL Driving Exam",
+  "description": "Complete start-to-end procedure, 1:1 DMT written exam simulator, and 134 official road signs for Sri Lankan driving license candidates.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a0c",
+  "theme_color": "#ca8a04",
+  "categories": ["education", "government", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64 128x128 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "64x64 128x128 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

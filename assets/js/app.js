@@ -71,10 +71,31 @@ const AudioEngine = {
   }
 };
 
+// Defensive Safe Storage (resilient against private browsing & quota limits)
+function safeStorageGet(key, fallback = null) {
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : fallback;
+  } catch (e) {
+    return fallback;
+  }
+}
+
+function safeStorageSet(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (e) {
+    console.warn('LocalStorage unavailable or quota exceeded:', e);
+  }
+}
+
 // Theme Management
 const ThemeManager = {
   init() {
-    const savedTheme = localStorage.getItem('sldl_theme') || 'dark';
+    let savedTheme = 'dark';
+    try {
+      savedTheme = localStorage.getItem('sldl_theme') || 'dark';
+    } catch(e) {}
     this.applyTheme(savedTheme);
 
     const toggleBtn = document.getElementById('theme-toggle-btn');
@@ -90,7 +111,9 @@ const ThemeManager = {
 
   applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('sldl_theme', theme);
+    try {
+      localStorage.setItem('sldl_theme', theme);
+    } catch(e) {}
     const icon = document.getElementById('theme-icon');
     if (icon) {
       icon.textContent = theme === 'dark' ? '☀️' : '🌙';
@@ -220,7 +243,7 @@ const ChecklistManager = {
     const container = document.getElementById('doc-checklist');
     if (!container) return;
 
-    const saved = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
+    const saved = safeStorageGet(this.storageKey, {});
     const checkboxes = container.querySelectorAll('input[type="checkbox"]');
 
     checkboxes.forEach(cb => {
@@ -232,7 +255,7 @@ const ChecklistManager = {
 
       cb.addEventListener('change', () => {
         saved[id] = cb.checked;
-        localStorage.setItem(this.storageKey, JSON.stringify(saved));
+        safeStorageSet(this.storageKey, saved);
         if (cb.checked) {
           cb.closest('.check-item')?.classList.add('checked');
           AudioEngine.playSuccess();
@@ -249,7 +272,9 @@ const ChecklistManager = {
     const resetBtn = document.getElementById('checklist-reset-btn');
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
-        localStorage.removeItem(this.storageKey);
+        try {
+          localStorage.removeItem(this.storageKey);
+        } catch(e) {}
         checkboxes.forEach(cb => {
           cb.checked = false;
           cb.closest('.check-item')?.classList.remove('checked');
@@ -272,15 +297,82 @@ const ChecklistManager = {
   }
 };
 
-// Mobile Nav Toggle
+// Mobile Nav Toggle & Drawer Management
 const NavManager = {
   init() {
     const btn = document.getElementById('mobile-menu-toggle');
     const links = document.getElementById('nav-links');
     if (!btn || !links) return;
 
+    btn.setAttribute('aria-expanded', 'false');
+
+    const closeMenu = () => {
+      links.classList.remove('mobile-open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-menu-open');
+    };
+
     btn.addEventListener('click', () => {
-      links.classList.toggle('mobile-open');
+      const isOpen = links.classList.toggle('mobile-open');
+      btn.setAttribute('aria-expanded', isOpen.toString());
+      document.body.classList.toggle('nav-menu-open', isOpen);
+      AudioEngine.playClick();
+    });
+
+    // Close menu when clicking any nav link
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // Close menu when clicking outside or pressing Escape
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !links.contains(e.target) && links.classList.contains('mobile-open')) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && links.classList.contains('mobile-open')) {
+        closeMenu();
+      }
+    });
+  }
+};
+
+// Back to Top Floating Action Button (Thumb Zone Ergonomics)
+const BackToTopManager = {
+  init() {
+    let btn = document.getElementById('back-to-top-btn');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'back-to-top-btn';
+      btn.className = 'back-to-top-btn';
+      btn.setAttribute('aria-label', 'Scroll back to top');
+      btn.setAttribute('title', 'Back to top');
+      btn.innerHTML = '↑';
+      document.body.appendChild(btn);
+    }
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 380) {
+            btn.classList.add('visible');
+          } else {
+            btn.classList.remove('visible');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       AudioEngine.playClick();
     });
   }
@@ -293,4 +385,5 @@ document.addEventListener('DOMContentLoaded', () => {
   TimelineSimulator.init();
   ChecklistManager.init();
   NavManager.init();
+  BackToTopManager.init();
 });

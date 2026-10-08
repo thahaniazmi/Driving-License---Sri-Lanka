@@ -5,6 +5,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q001",
     "category": "Road Signs & Markings",
     "question": "What is the primary meaning of an equilateral triangular road sign with a red border and yellow background?",
+    "signImage": "assets/signs/LK_Road_sign_DWS-01.svg",
     "options": [
       "A mandatory instruction that must be obeyed",
       "A danger warning sign alerting drivers to a hazard ahead",
@@ -19,6 +20,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q002",
     "category": "Road Signs & Markings",
     "question": "What does a circular sign with a red border and a white background signify?",
+    "signImage": "assets/signs/LK_road_sign_PHS-01.svg",
     "options": [
       "A priority instruction",
       "A mandatory command",
@@ -33,6 +35,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q003",
     "category": "Road Signs & Markings",
     "question": "What does a circular road sign with a blue background and a white symbol indicate?",
+    "signImage": "assets/signs/Vienna_Convention_road_sign_D1b-V1-1.svg",
     "options": [
       "A mandatory instruction that drivers MUST follow",
       "A warning of dangerous road conditions",
@@ -47,6 +50,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q004",
     "category": "Road Signs & Markings",
     "question": "What action is required when you see an octagonal red sign with the word 'STOP'?",
+    "signImage": "assets/signs/LK_road_sign_PRS-01.svg",
     "options": [
       "Slow down and proceed if no vehicle is approaching within 50 meters",
       "Come to a complete stop before the stop line and proceed only when the road is completely clear",
@@ -61,6 +65,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q005",
     "category": "Road Signs & Markings",
     "question": "What does an inverted triangular sign (apex pointing downward) with a red border mean?",
+    "signImage": "assets/signs/Vienna_Convention_road_sign_B1-V1.svg",
     "options": [
       "Give Way / Yield priority to vehicles on the major road",
       "Steep downhill slope ahead",
@@ -75,6 +80,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q006",
     "category": "Road Signs & Markings",
     "question": "What does a single continuous solid white line painted along the center of a two-way roadway indicate?",
+    "signImage": "assets/signs/4_1_7.svg",
     "options": [
       "You may cross it anytime if no vehicle is visible ahead",
       "You must not cross or straddle it, except when turning right into a side road or entering premises",
@@ -89,6 +95,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q007",
     "category": "Road Signs & Markings",
     "question": "What is the rule regarding double continuous white lines painted along the center of the road?",
+    "signImage": "assets/signs/4_1_7.svg",
     "options": [
       "Motorcycles are allowed to overtake between the lines",
       "Vehicles may cross the lines if driving at less than 30 km/h",
@@ -131,6 +138,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q010",
     "category": "Road Signs & Markings",
     "question": "What does a sign showing a red circle with a red diagonal bar across a silhouette of a car and a motorcycle signify?",
+    "signImage": "assets/signs/LK_road_sign_PHS-03.svg",
     "options": [
       "Car and motorcycle racing permitted",
       "No motor vehicles allowed (all motor vehicles prohibited)",
@@ -145,6 +153,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q011",
     "category": "Road Signs & Markings",
     "question": "What does a blue circular sign displaying a red diagonal cross (X) inside with a red border mean?",
+    "signImage": "assets/signs/LK_road_sign_PHS-24.svg",
     "options": [
       "No parking permitted",
       "Clearway: No stopping or standing permitted under any circumstance",
@@ -159,6 +168,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q012",
     "category": "Road Signs & Markings",
     "question": "What does a blue circular sign with a single red diagonal stripe across it mean?",
+    "signImage": "assets/signs/LK_road_sign_PHS-23.svg",
     "options": [
       "No Stopping",
       "No Parking (Waiting permitted briefly to load/unload)",
@@ -173,6 +183,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q013",
     "category": "Road Signs & Markings",
     "question": "What does a sign with a red circular border containing the number '50' mean?",
+    "signImage": "assets/signs/LK_road_sign_RSS-05.svg",
     "options": [
       "Minimum recommended speed is 50 km/h",
       "Maximum speed limit of 50 km/h; exceeding this is illegal",
@@ -187,6 +198,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q014",
     "category": "Road Signs & Markings",
     "question": "What does a yellow diamond-shaped sign indicate on Sri Lankan roads?",
+    "signImage": "assets/signs/Vienna_Convention_road_sign_B3-V1.svg",
     "options": [
       "Dead end ahead",
       "Priority Road: Traffic on this road has priority over intersecting side roads",
@@ -201,6 +213,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q015",
     "category": "Road Signs & Markings",
     "question": "What does a sign showing two cars side-by-side (the car on the right colored red, the other black) within a red circle mean?",
+    "signImage": "assets/signs/LK_road_sign_PHS-04.svg",
     "options": [
       "Overtaking is mandatory for fast vehicles",
       "No overtaking of four-wheeled power-driven vehicles",
@@ -215,6 +228,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q016",
     "category": "Road Signs & Markings",
     "question": "What does a triangular warning sign displaying an exclamation mark (!) mean?",
+    "signImage": "assets/signs/LK_Road_sign_DWS-49.svg",
     "options": [
       "Major hospital nearby; sound no horn",
       "General hazard / Danger ahead not covered by other specific signs",
@@ -229,6 +243,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q017",
     "category": "Road Signs & Markings",
     "question": "What does a triangular warning sign with a silhouette of a steam train engine indicate?",
+    "signImage": "assets/signs/LK_Road_sign_DWS-42.svg",
     "options": [
       "Guarded railway level crossing with gates ahead",
       "Unguarded railway level crossing without gates or barrier ahead",
@@ -243,6 +258,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q018",
     "category": "Road Signs & Markings",
     "question": "What does a triangular sign showing a gate/fence silhouette mean?",
+    "signImage": "assets/signs/LK_Road_sign_DWS-41.svg",
     "options": [
       "National park boundary ahead",
       "Guarded railway level crossing with gates or barriers ahead",
@@ -257,6 +273,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q019",
     "category": "Road Signs & Markings",
     "question": "What does a sign showing a horn with a red diagonal strike-through mean?",
+    "signImage": "assets/signs/LK_road_sign_PHS-21.svg",
     "options": [
       "Horn test area",
       "Use of sounding horn / auditory warning devices is strictly prohibited",
@@ -271,6 +288,7 @@ const SRI_LANKA_EXAM_QUESTIONS = [
     "id": "Q020",
     "category": "Road Signs & Markings",
     "question": "What does a rectangular blue sign with a white capital letter 'P' indicate?",
+    "signImage": "assets/signs/LK_road_sign_OSD-01.svg",
     "options": [
       "Police station",
       "Designated parking place / parking area",

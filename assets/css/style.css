@@ -123,15 +123,89 @@ html {
   background-color: var(--bg-main);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   background-color: var(--bg-main);
   color: var(--text-main);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+body.nav-menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Fast tap response & eliminate 300ms tap delay on mobile devices */
+button,
+a,
+input,
+select,
+textarea,
+.sign-card,
+.option-item,
+.check-item,
+.filter-tab,
+.q-filter-btn,
+.palette-btn,
+.view-toggle-btn {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Themed Browser Surfaces */
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+input, textarea, select {
+  caret-color: var(--primary);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) var(--bg-main);
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-main);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary);
+}
+
+.stat-number,
+.quiz-timer,
+.calc-result-row span:last-child,
+.summary-box-val,
+.result-score-circle,
+#current-q-num,
+#total-q-count,
+#checklist-counter,
+.sign-card-code {
+  font-variant-numeric: tabular-nums;
 }
 
 a {
@@ -358,9 +432,8 @@ button, input, select, textarea {
 }
 .hero h1 span.gradient-text,
 .hero h1 span.hero-highlight {
-  background: linear-gradient(135deg, #facc15, #ef4444);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
+  font-weight: 800;
   display: inline-block;
 }
 
@@ -1700,5 +1773,72 @@ button, input, select, textarea {
   }
   .footer-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.85rem;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+  .preview-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .tool-card {
+    padding: 1.25rem;
+  }
+  .step-header {
+    padding: 1.25rem 1rem;
+  }
+  .step-body {
+    padding: 1.25rem 1rem;
+  }
+  .quiz-layout {
+    padding: 0 0.75rem;
+  }
+  .question-box {
+    padding: 1.5rem 1rem;
+  }
+  .palette-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.35rem;
+  }
+}
+
+@media print {
+  .site-header,
+  .nav-controls,
+  .hero-actions,
+  .btn-icon,
+  .btn-cta,
+  .site-footer,
+  #checklist-reset-btn {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .tool-card,
+  .step-card {
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    page-break-inside: avoid;
   }
 }

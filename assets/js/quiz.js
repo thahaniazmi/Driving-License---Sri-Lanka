@@ -68,6 +68,14 @@ const QuizEngine = {
 
     // Bind keyboard navigation
     document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('submit-confirm-modal');
+      if (modal && modal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+          this.closeSubmitModal();
+          return;
+        }
+      }
+
       if (!this.questions.length || this.isFinished) return;
       if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
@@ -91,6 +99,7 @@ const QuizEngine = {
     document.getElementById('quiz-setup-card')?.classList.add('hidden');
     document.getElementById('quiz-workspace')?.classList.remove('hidden');
     document.getElementById('quiz-header-bar')?.classList.remove('hidden');
+    document.getElementById('quiz-mobile-bottom-bar')?.classList.remove('hidden');
 
     this.loadQuestions();
     this.currentIndex = 0;
@@ -287,7 +296,7 @@ const QuizEngine = {
       }
     }
 
-    // Update Navigation Buttons
+    // Update Navigation Buttons (Desktop)
     const prevBtn = document.getElementById('btn-prev-q');
     const nextBtn = document.getElementById('btn-next-q');
     if (prevBtn) prevBtn.disabled = this.currentIndex === 0;
@@ -296,6 +305,35 @@ const QuizEngine = {
         nextBtn.innerHTML = 'Review & Finish →';
       } else {
         nextBtn.innerHTML = 'Next →';
+      }
+    }
+
+    // Update Mobile Sticky Bottom Bar Controls
+    const mobilePaletteStatus = document.getElementById('mobile-palette-status');
+    if (mobilePaletteStatus) {
+      mobilePaletteStatus.textContent = `Q ${this.currentIndex + 1}/${this.questions.length}`;
+    }
+    const mobilePrevBtn = document.getElementById('mobile-btn-prev-q');
+    if (mobilePrevBtn) mobilePrevBtn.disabled = this.currentIndex === 0;
+
+    const mobileNextLabel = document.getElementById('mobile-next-label');
+    if (mobileNextLabel) {
+      mobileNextLabel.textContent = this.currentIndex === this.questions.length - 1 ? 'Finish' : 'Next';
+    }
+
+    const mobileFlagBtn = document.getElementById('mobile-btn-flag-q');
+    const mobileFlagIcon = document.getElementById('mobile-flag-icon');
+    const mobileFlagLabel = document.getElementById('mobile-flag-label');
+    if (mobileFlagBtn) {
+      const isFlagged = this.flagged.has(this.currentIndex);
+      if (isFlagged) {
+        mobileFlagBtn.classList.add('active');
+        if (mobileFlagIcon) mobileFlagIcon.textContent = '🚩';
+        if (mobileFlagLabel) mobileFlagLabel.textContent = 'Flagged';
+      } else {
+        mobileFlagBtn.classList.remove('active');
+        if (mobileFlagIcon) mobileFlagIcon.textContent = '🏳️';
+        if (mobileFlagLabel) mobileFlagLabel.textContent = 'Flag';
       }
     }
 
@@ -366,6 +404,7 @@ const QuizEngine = {
           this.currentIndex = idx;
           AudioEngine.playClick();
           this.renderCurrentQuestion();
+          this.closePaletteDrawer();
         }
       });
       this.paletteBound = true;
@@ -376,6 +415,20 @@ const QuizEngine = {
     ).join('');
 
     this.updateAllPaletteButtons();
+  },
+
+  togglePaletteDrawer() {
+    const col = document.getElementById('palette-column');
+    const backdrop = document.getElementById('palette-drawer-backdrop');
+    if (!col) return;
+    const isOpen = col.classList.toggle('drawer-open');
+    if (backdrop) backdrop.classList.toggle('active', isOpen);
+    AudioEngine.playClick();
+  },
+
+  closePaletteDrawer() {
+    document.getElementById('palette-column')?.classList.remove('drawer-open');
+    document.getElementById('palette-drawer-backdrop')?.classList.remove('active');
   },
 
   updatePaletteButton(idx) {
@@ -467,6 +520,8 @@ const QuizEngine = {
     // Hide workspace, show results screen
     document.getElementById('quiz-workspace')?.classList.add('hidden');
     document.getElementById('quiz-header-bar')?.classList.add('hidden');
+    document.getElementById('quiz-mobile-bottom-bar')?.classList.add('hidden');
+    this.closePaletteDrawer();
     document.getElementById('quiz-results-card')?.classList.remove('hidden');
 
     if (passed) {
@@ -623,11 +678,34 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('modal-confirm-submit-btn')?.addEventListener('click', () => {
     QuizEngine.finishExam();
   });
+  document.getElementById('submit-confirm-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'submit-confirm-modal') {
+      QuizEngine.closeSubmitModal();
+    }
+  });
 
-  // Nav buttons
+  // Nav buttons (Desktop)
   document.getElementById('btn-prev-q')?.addEventListener('click', () => QuizEngine.prevQuestion());
   document.getElementById('btn-next-q')?.addEventListener('click', () => QuizEngine.nextQuestion());
   document.getElementById('btn-flag-question')?.addEventListener('click', () => {
     QuizEngine.toggleFlag(QuizEngine.currentIndex);
+  });
+
+  // Nav buttons (Mobile Sticky Bottom Bar)
+  document.getElementById('mobile-btn-prev-q')?.addEventListener('click', () => QuizEngine.prevQuestion());
+  document.getElementById('mobile-btn-next-q')?.addEventListener('click', () => QuizEngine.nextQuestion());
+  document.getElementById('mobile-btn-flag-q')?.addEventListener('click', () => {
+    QuizEngine.toggleFlag(QuizEngine.currentIndex);
+  });
+  document.getElementById('mobile-btn-palette-toggle')?.addEventListener('click', () => {
+    QuizEngine.togglePaletteDrawer();
+  });
+
+  // Palette drawer close controls
+  document.getElementById('palette-drawer-close')?.addEventListener('click', () => {
+    QuizEngine.closePaletteDrawer();
+  });
+  document.getElementById('palette-drawer-backdrop')?.addEventListener('click', () => {
+    QuizEngine.closePaletteDrawer();
   });
 });

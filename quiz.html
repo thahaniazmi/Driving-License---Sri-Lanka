@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>1:1 DMT Written Exam Simulator - Sri Lanka Driving License</title>
   <meta name="description" content="Realistic 1:1 simulation of the Sri Lanka Department of Motor Traffic (DMT) driving license written theory examination. 40 MCQs, 60-minute timer, pass mark 30/40.">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -210,10 +210,14 @@
           </div>
         </div>
 
-        <!-- Question Palette Column -->
-        <div class="palette-column">
-          <div class="palette-card">
-            <div class="palette-title">Question Navigator</div>
+        <!-- Question Palette Column (Desktop sidebar & Mobile slide-up bottom sheet) -->
+        <div class="palette-drawer-backdrop" id="palette-drawer-backdrop"></div>
+        <div class="palette-column" id="palette-column">
+          <div class="palette-card" id="palette-card">
+            <div class="palette-header">
+              <div class="palette-title">Question Navigator</div>
+              <button class="palette-drawer-close" id="palette-drawer-close" aria-label="Close Question Navigator">&times;</button>
+            </div>
             <div class="palette-grid" id="palette-grid"></div>
 
             <div class="palette-legend">
@@ -232,6 +236,26 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Mobile Sticky Bottom Action Bar (Thumb Zone Ergonomics) -->
+      <div class="quiz-mobile-bottom-bar" id="quiz-mobile-bottom-bar">
+        <button id="mobile-btn-prev-q" class="mobile-bar-btn" aria-label="Previous Question">
+          <span class="bar-btn-icon">←</span>
+          <span class="bar-btn-label">Prev</span>
+        </button>
+        <button id="mobile-btn-flag-q" class="mobile-bar-btn" aria-label="Flag Question for Review">
+          <span class="bar-btn-icon" id="mobile-flag-icon">🏳️</span>
+          <span class="bar-btn-label" id="mobile-flag-label">Flag</span>
+        </button>
+        <button id="mobile-btn-palette-toggle" class="mobile-bar-btn mobile-bar-btn-palette" aria-label="Toggle Question Navigator Sheet">
+          <span class="bar-btn-icon">📑</span>
+          <span class="bar-btn-label" id="mobile-palette-status">Nav 1/40</span>
+        </button>
+        <button id="mobile-btn-next-q" class="mobile-bar-btn mobile-bar-btn-primary" aria-label="Next Question">
+          <span class="bar-btn-icon">→</span>
+          <span class="bar-btn-label" id="mobile-next-label">Next</span>
+        </button>
       </div>
     </section>
 

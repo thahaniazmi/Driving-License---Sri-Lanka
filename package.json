@@ -1,0 +1,19 @@
+{
+  "name": "sri-lanka-driving-license-portal",
+  "version": "1.0.0",
+  "description": "Sri Lanka Driving License Procedure Guide, 1:1 DMT Written Exam Simulator, and 134 Gazette Road Signs Library",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "sri lanka driving license",
+    "dmt exam simulator",
+    "sri lanka road signs",
+    "highway code sri lanka",
+    "werahera exam"
+  ],
+  "author": "Sri Lanka Driving License Prep Portal",
+  "license": "MIT"
+}

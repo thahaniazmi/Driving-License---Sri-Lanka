@@ -37,6 +37,20 @@ const QuizEngine = {
   },
 
   bindSetupControls() {
+    // Sync setup controls with URL parameters if preloaded
+    if (this.mode === 'practice') {
+      const practiceRadio = document.querySelector('input[name="quiz-mode-select"][value="practice"]');
+      if (practiceRadio) practiceRadio.checked = true;
+    }
+    if (this.paper === 'topic') {
+      const paperSelect = document.getElementById('quiz-paper-select');
+      const topicGroup = document.getElementById('topic-select-group');
+      const topicSelect = document.getElementById('quiz-topic-select');
+      if (paperSelect) paperSelect.value = 'topic';
+      if (topicGroup) topicGroup.style.display = 'block';
+      if (topicSelect && this.selectedTopic) topicSelect.value = this.selectedTopic;
+    }
+
     const startBtn = document.getElementById('start-quiz-btn');
     if (startBtn) {
       startBtn.addEventListener('click', () => {
@@ -233,8 +247,17 @@ const QuizEngine = {
     const signBox = document.getElementById('question-sign-box');
     if (signBox) {
       if (q.signImage) {
+        let fallbackUrl = '';
+        if (typeof SRI_LANKA_ROAD_SIGNS !== 'undefined') {
+          const signObj = SRI_LANKA_ROAD_SIGNS.find(s => s.localFile === q.signImage || s.fileName === q.signImage.split('/').pop());
+          if (signObj) fallbackUrl = signObj.imgUrl || '';
+        }
         signBox.style.display = 'flex';
-        signBox.innerHTML = `<img src="${q.signImage}" alt="Road Sign" width="120" height="120" loading="lazy">`;
+        signBox.innerHTML = `
+          <div style="background: var(--bg-card); padding: 0.75rem 1.5rem; border-radius: var(--radius-lg); border: 2px solid var(--border); box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+            <img src="${q.signImage}" alt="Official DMT Road Sign" width="120" height="120" style="max-height: 120px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));" loading="lazy" decoding="async" onerror="this.onerror=null; if('${fallbackUrl}') this.src='${fallbackUrl}';">
+          </div>
+        `;
       } else {
         signBox.style.display = 'none';
         signBox.innerHTML = '';
@@ -613,11 +636,18 @@ const QuizEngine = {
           <span style="font-size: 0.8rem; color: var(--text-muted);">${q.category}</span>
         </div>
 
-        ${q.signImage ? `
-          <div style="max-width: 120px; margin: 0.5rem 0;">
-            <img src="${q.signImage}" alt="Sign" style="max-height: 90px; object-fit: contain;">
-          </div>
-        ` : ''}
+        ${q.signImage ? (() => {
+          let fallback = '';
+          if (typeof SRI_LANKA_ROAD_SIGNS !== 'undefined') {
+            const sObj = SRI_LANKA_ROAD_SIGNS.find(s => s.localFile === q.signImage || s.fileName === q.signImage.split('/').pop());
+            if (sObj) fallback = sObj.imgUrl || '';
+          }
+          return `
+            <div style="max-width: 130px; margin: 0.75rem 0 1rem; padding: 0.6rem; background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+              <img src="${q.signImage}" alt="Sign" style="max-height: 90px; max-width: 110px; object-fit: contain;" loading="lazy" decoding="async" onerror="this.onerror=null; if('${fallback}') this.src='${fallback}';">
+            </div>
+          `;
+        })() : ''}
 
         <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">${q.question}</h4>
 

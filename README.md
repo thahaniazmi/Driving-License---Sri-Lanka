@@ -94,14 +94,24 @@ Driving License/
 ├── quiz.html                # 1:1 Written Exam Simulator
 ├── signs.html               # 134 Road Signs Library & Flashcards
 ├── questions.html           # 100 Past Questions Bank Explorer
+├── 404.html                 # Custom Vercel & Offline 404 Error Page
+├── vercel.json              # Vercel Production Deployment & Headers Config
+├── package.json             # NPM package scripts & metadata
+├── manifest.json            # PWA Web App Manifest
+├── sw.js                    # Service Worker for 100% offline edge caching
+├── robots.txt               # Search engine crawler instructions
+├── sitemap.xml              # XML Sitemap for SEO indexing
+├── favicon.svg              # Vector SVG steering wheel favicon
 ├── questions.json           # Raw JSON Question Bank
 ├── signs_wiki.json          # Raw JSON Road Signs Data
 ├── README.md                # Documentation & User Guide
 └── assets/
+    ├── icons/
+    │   └── favicon.svg      # App icon
     ├── css/
     │   └── style.css        # Responsive styling & themes
     ├── js/
-    │   ├── app.js           # Theme, audio synthesizer, calculators, checklist
+    │   ├── app.js           # Theme, audio synthesizer, calculators, checklist, SW
     │   ├── quiz.js          # Exam simulation & timer engine
     │   ├── signs.js         # Road signs filtering & flashcards
     │   ├── questions.js     # Question bank explorer & bookmarking
@@ -109,3 +119,35 @@ Driving License/
     │   └── questions-data.js# 100 Questions database
     └── signs/               # 134 Local SVG Vector Road Signs
 ```
+
+---
+
+## ☁️ Deploying to Vercel
+
+The portal is 100% optimized for **zero-configuration production deployment on Vercel**:
+
+### 1. Instant Git Import
+1. Push this repository to GitHub, GitLab, or Bitbucket.
+2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Select this repository and click **Deploy**.
+4. Vercel automatically detects the static site configuration in `vercel.json` and deploys it immediately!
+
+### 2. Vercel CLI Deployment
+You can also deploy directly from your local terminal using the Vercel CLI:
+```bash
+npm i -g vercel
+vercel
+```
+To deploy straight to production:
+```bash
+vercel --prod
+```
+
+### ⚡ What Was Optimized for Vercel:
+- **Clean URLs Enabled (`cleanUrls: true`)**: Access `/quiz`, `/signs`, `/questions` without trailing `.html` extensions.
+- **Cache-Control Headers**: 1-year immutable caching for static vector SVGs, stylesheets, and scripts (`max-age=31536000, immutable`), maximizing global CDN edge hits and Lighthouse speed scores.
+- **Enterprise Security Headers**: Strict `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `X-XSS-Protection`, `Referrer-Policy`, and `Permissions-Policy`.
+- **Custom 404 Page (`404.html`)**: Branded "Wrong Turn" error page with quick links back to all learning modules.
+- **PWA & Offline Service Worker (`sw.js` & `manifest.json`)**: Automatic local caching for candidates studying on mobile devices in low-connectivity exam waiting areas.
+- **SEO & Social Share Readiness**: Open Graph, Twitter Cards, `sitemap.xml`, and `robots.txt` pre-configured.
+

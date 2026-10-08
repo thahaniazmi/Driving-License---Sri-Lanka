@@ -17,9 +17,35 @@ const SignsManager = {
       return;
     }
     this.signs = SRI_LANKA_ROAD_SIGNS;
-    this.flashcardDeck = [...this.signs];
-
     this.bindControls();
+
+    // Check URL parameters for direct deep-linking
+    const urlParams = new URLSearchParams(window.location.search);
+    const modeParam = urlParams.get('mode');
+    const catParam = urlParams.get('category');
+
+    if (catParam) {
+      this.currentCategory = catParam;
+      const matchingTab = document.querySelector(`.filter-tab[data-category="${catParam}"]`);
+      if (matchingTab) {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        matchingTab.classList.add('active');
+      }
+    }
+
+    if (modeParam === 'flashcards') {
+      const viewGridBtn = document.getElementById('view-grid-btn');
+      const viewFlashBtn = document.getElementById('view-flash-btn');
+      const gridView = document.getElementById('signs-grid-view');
+      const flashView = document.getElementById('signs-flash-view');
+      if (viewFlashBtn && flashView) {
+        viewGridBtn?.classList.remove('active');
+        viewFlashBtn.classList.add('active');
+        if (gridView) gridView.style.display = 'none';
+        flashView.style.display = 'block';
+      }
+    }
+
     this.renderSignsGrid();
     this.renderFlashcard();
     this.updateCounters();
@@ -179,9 +205,72 @@ const SignsManager = {
     });
   },
 
+  CATEGORY_EXPLAINERS: {
+    'Warning': {
+      title: 'Class 1: Danger Warning Signs (49 Signs)',
+      desc: '<strong>Equilateral Triangle (Apex Upward) with red border and yellow/white background.</strong> Alerts motorists of immediate road hazards ahead (sharp curves, steep slopes, school crossings, unguarded railway lines). Drivers are legally required to ease off the accelerator, maintain lane position, and prepare to stop or give way.',
+      icon: '⚠️'
+    },
+    'Prohibitory': {
+      title: 'Class 2: Prohibitory Signs (26 Signs)',
+      desc: '<strong>Circular with red border and white/blue background with red diagonal slash.</strong> Negative legal orders prohibiting specific movements or vehicle types (No Entry, No U-Turn, No Overtaking, No Parking, No Horn). Disobedience constitutes a strict liability traffic offense.',
+      icon: '🚫'
+    },
+    'Restrictive': {
+      title: 'Class 3: Restrictive Signs & Speed Limits (10 Signs)',
+      desc: '<strong>Circular with red border containing black numerals.</strong> Sets absolute statutory maximum speed limits across Sri Lanka: 50 km/h in built-up/urban areas, 70 km/h on non built-up open roads, 100 km/h on Expressways, and 40 km/h for three-wheelers.',
+      icon: '🛑'
+    },
+    'Mandatory': {
+      title: 'Class 4: Mandatory Signs (8 Signs)',
+      desc: '<strong>Circular with deep blue background and white symbols.</strong> Positive legal commands telling drivers what they MUST do (Turn Left, Keep Left, Roundabout, Proceed Straight). Following alternative paths is illegal.',
+      icon: '🔵'
+    },
+    'Priority': {
+      title: 'Class 5: Priority & Right-of-Way Signs (7 Signs)',
+      desc: '<strong>Distinctive geometric shapes (Octagon STOP, Inverted Triangle Give Way, Diamond Priority Road).</strong> Designed to be instantly recognizable even from behind or when obscured by weather, dictating who has right-of-way at intersections.',
+      icon: '🛑'
+    },
+    'Informative': {
+      title: 'Class 6: Directional & Informative Signs (22 Signs)',
+      desc: '<strong>Rectangular boards. Green for Expressways and Class-A trunk roads; Blue for Provincial roads and driver amenities</strong> (Parking, Fuel, Hospitals, Distances). Directs drivers safely to destinations.',
+      icon: 'ℹ️'
+    },
+    'Traffic': {
+      title: 'Class 7A: Traffic Light Signals (5 Signals)',
+      desc: '<strong>Automated electronic optical signals.</strong> Red means complete stop behind the stop line; Red+Amber prepares to move; Green allows moving forward if intersection is clear; steady Amber requires stopping unless dangerously close to the line.',
+      icon: '🚦'
+    },
+    'Markings': {
+      title: 'Class 7B: Road Markings (4 Primary Markings)',
+      desc: '<strong>Longitudinal and transverse painted road markings.</strong> Continuous solid white line forbids crossing or straddling; Double solid white lines carry strict liability prohibition; Yellow Box junction requires a completely clear exit before entering.',
+      icon: '🛣️'
+    }
+  },
+
   renderSignsGrid() {
     const grid = document.getElementById('signs-grid');
     if (!grid) return;
+
+    // Update Category Explainer Banner
+    const explainerBox = document.getElementById('category-explainer-box');
+    if (explainerBox) {
+      const info = this.CATEGORY_EXPLAINERS[this.currentCategory];
+      if (info && !this.searchQuery) {
+        explainerBox.style.display = 'block';
+        explainerBox.innerHTML = `
+          <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <span style="font-size: 1.6rem; line-height: 1;">${info.icon}</span>
+            <div>
+              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--text-main);">${info.title}</h4>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">${info.desc}</p>
+            </div>
+          </div>
+        `;
+      } else {
+        explainerBox.style.display = 'none';
+      }
+    }
 
     const filtered = this.getFilteredSigns();
     const counter = document.getElementById('filtered-signs-count');
@@ -202,11 +291,12 @@ const SignsManager = {
     const htmlParts = filtered.map(sign => {
       const badgeClass = this.getBadgeClass(sign.categoryBadge);
       const code = sign.id.replace('LK_Road_sign_', '').replace('LK_road_sign_', '');
+      const fallbackUrl = sign.imgUrl || '';
       return `
         <div class="sign-card" data-sign-id="${sign.id}" tabindex="0" role="button" aria-label="${sign.name} (${code})">
           <div class="sign-card-code">${code}</div>
           <div class="sign-img-container">
-            <img src="${sign.localFile}" alt="${sign.name}" width="100" height="100" loading="lazy">
+            <img src="${sign.localFile}" alt="${sign.name}" width="100" height="100" loading="lazy" decoding="async" onerror="this.onerror=null; if('${fallbackUrl}') this.src='${fallbackUrl}';">
           </div>
           <div class="sign-card-title">${sign.name}</div>
           <span class="sign-card-cat badge ${badgeClass}">${sign.categoryBadge || 'Sign'}</span>
@@ -239,7 +329,13 @@ const SignsManager = {
     const modalMeaning = document.getElementById('modal-sign-meaning');
     const modalShape = document.getElementById('modal-sign-shape');
 
-    if (modalImg) modalImg.src = sign.localFile;
+    if (modalImg) {
+      modalImg.onerror = () => {
+        if (sign.imgUrl) modalImg.src = sign.imgUrl;
+      };
+      modalImg.src = sign.localFile;
+      modalImg.decoding = 'async';
+    }
     if (modalCode) modalCode.textContent = sign.id.replace('LK_Road_sign_', '').replace('LK_road_sign_', '');
     if (modalTitle) modalTitle.textContent = sign.name;
     if (modalCategory) modalCategory.textContent = sign.mainCategory;
@@ -270,7 +366,13 @@ const SignsManager = {
     const backShape = document.getElementById('flash-back-shape');
     const progressEl = document.getElementById('flash-progress-text');
 
-    if (frontImg) frontImg.src = sign.localFile;
+    if (frontImg) {
+      frontImg.onerror = () => {
+        if (sign.imgUrl) frontImg.src = sign.imgUrl;
+      };
+      frontImg.src = sign.localFile;
+      frontImg.decoding = 'async';
+    }
     if (frontCode) frontCode.textContent = sign.id.replace('LK_Road_sign_', '').replace('LK_road_sign_', '');
     if (backTitle) backTitle.textContent = sign.name;
     if (backCategory) backCategory.textContent = sign.mainCategory;

@@ -378,6 +378,23 @@ const BackToTopManager = {
   }
 };
 
+// Service Worker Registration for PWA & Offline Resilience
+const ServiceWorkerManager = {
+  init() {
+    if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => {
+            console.log('SLDL ServiceWorker registered:', reg.scope);
+          })
+          .catch((err) => {
+            console.warn('SLDL ServiceWorker registration skipped:', err);
+          });
+      });
+    }
+  }
+};
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   ThemeManager.init();
@@ -386,4 +403,5 @@ document.addEventListener('DOMContentLoaded', () => {
   ChecklistManager.init();
   NavManager.init();
   BackToTopManager.init();
+  ServiceWorkerManager.init();
 });

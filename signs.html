@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sri Lanka Road Signs Library (134 Signs) & Flashcards</title>
   <meta name="description" content="Comprehensive official directory of all 134 Sri Lankan road signs prescribed under the Motor Traffic Act. Includes danger warning, prohibitory, mandatory, priority signs and interactive flashcards.">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://driving-license-sri-lanka.vercel.app/signs">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://driving-license-sri-lanka.vercel.app/signs">
+  <meta property="og:title" content="Sri Lanka Road Signs Library (134 Signs) & Flashcards">
+  <meta property="og:description" content="Comprehensive official directory of all 134 Sri Lankan road signs prescribed under the Motor Traffic Act. With interactive 3D flashcards.">
+  <meta property="og:site_name" content="Sri Lanka Driving License Portal">
+  <meta property="og:image" content="https://driving-license-sri-lanka.vercel.app/favicon.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sri Lanka Road Signs Library (134 Signs) & Flashcards">
+  <meta name="twitter:description" content="Comprehensive official directory of all 134 Sri Lankan road signs prescribed under the Motor Traffic Act.">
+  <meta name="twitter:image" content="https://driving-license-sri-lanka.vercel.app/favicon.svg">
+
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     .view-toggle-group {
@@ -34,6 +55,17 @@
       font-weight: 700;
       box-shadow: var(--shadow-sm);
     }
+    @media (max-width: 640px) {
+      .view-toggle-group {
+        width: 100%;
+      }
+      .view-toggle-btn {
+        flex: 1;
+        justify-content: center;
+        min-height: 44px;
+        font-size: 0.88rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -60,7 +92,7 @@
         <button id="theme-toggle-btn" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
           <span id="theme-icon">🌙</span>
         </button>
-        <a href="quiz.html?mode=practice&topic=Road Signs" class="btn-cta">
+        <a href="quiz.html?mode=practice&topic=Road Signs&start=1" class="btn-cta">
           <span>Test Signs</span>
           <span>⚡</span>
         </a>
@@ -97,7 +129,7 @@
               </button>
             </div>
 
-            <a href="quiz.html?mode=practice&topic=Road Signs" class="btn-hero-primary" style="padding: 0.55rem 1.15rem; font-size: 0.9rem;">
+            <a href="quiz.html?mode=practice&topic=Road Signs&start=1" class="btn-hero-primary" style="padding: 0.55rem 1.15rem; font-size: 0.9rem;">
               <span>Quiz on Signs (Practice Mode)</span>
               <span>→</span>
             </a>
@@ -135,6 +167,9 @@
             <span>Click any sign card to view full legal rules and meaning</span>
           </div>
         </div>
+
+        <!-- CATEGORY EXPLAINER BANNER -->
+        <div id="category-explainer-box" class="info-alert" style="margin-bottom: 1.5rem; display: none;"></div>
 
         <!-- GRID VIEW -->
         <div id="signs-grid-view">

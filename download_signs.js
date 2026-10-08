@@ -4,8 +4,12 @@
  * Fetches authentic, high-definition vector SVG road signs directly
  * from the Wikimedia Commons API according to official Gazette & RDA standards.
  * 
- * Uses Wikimedia-compliant User-Agent and batch title resolution to avoid
- * rate limiting (HTTP 429) or robot policy blocks (HTTP 403).
+ * Features:
+ * - Wikimedia Commons MediaWiki API batch title resolution
+ * - Compliant User-Agent header
+ * - Automatic exponential backoff & cooldown on HTTP 429 rate limits
+ * - Validation of SVG XML integrity
+ * - Skipping of already verified vector files
  */
 
 const fs = require('fs');
@@ -43,6 +47,14 @@ function fetchUrl(url) {
           redirectUrl = new URL(redirectUrl, url).toString();
         }
         return resolve(fetchUrl(redirectUrl));
+      }
+
+      if (res.statusCode === 429) {
+        const retryHeader = res.headers['retry-after'];
+        const retryAfter = retryHeader ? parseInt(retryHeader, 10) : null;
+        const err = new Error(`HTTP 429 (Too Many Requests)`);
+        err.retryAfter = !isNaN(retryAfter) && retryAfter > 0 ? retryAfter : null;
+        return reject(err);
       }
 
       if (res.statusCode !== 200) {
@@ -99,7 +111,6 @@ async function main() {
       const respJson = JSON.parse(respBuf.toString('utf8'));
       const pages = respJson.query && respJson.query.pages ? respJson.query.pages : {};
 
-      // Build normalization mapping if titles were normalized by MediaWiki
       const normMap = new Map();
       if (respJson.query && respJson.query.normalized) {
         respJson.query.normalized.forEach(n => normMap.set(n.to, n.from));
@@ -116,7 +127,6 @@ async function main() {
 
         if (p.imageinfo && p.imageinfo.length > 0 && p.imageinfo[0].url) {
           const rawUrl = p.imageinfo[0].url;
-          // Match to our batch items
           const matchedFile = batch.find(f => {
             const fLower = f.toLowerCase();
             return fLower === cleanName.toLowerCase() ||
@@ -132,7 +142,7 @@ async function main() {
           }
         }
       }
-      await sleep(200);
+      await sleep(300);
     } catch (err) {
       console.warn(`Warning during API batch query (${i}..${i + batch.length}):`, err.message);
     }
@@ -140,11 +150,7 @@ async function main() {
 
   console.log(`Resolved direct URLs for ${directUrls.size} of ${fileNames.length} assets.\n`);
 
-  // Fallback for any unmapped file: derive standard Commons hash upload path
-  // Standard format: https://upload.wikimedia.org/wikipedia/commons/<h1_h2>/<fileName>
-  // We can construct it directly if needed.
-
-  // 3. Download each authentic vector SVG
+  // 3. Download each authentic vector SVG with retry and polite throttling
   let successCount = 0;
   let skippedCount = 0;
   let failedCount = 0;
@@ -154,14 +160,16 @@ async function main() {
     const targetFile = path.join(TARGET_DIR, fileName);
     const signInfo = fileMap.get(fileName);
     const signTitle = signInfo ? signInfo.name : fileName;
+    const progress = `[${String(i + 1).padStart(3, ' ')}/${fileNames.length}]`;
 
-    // Check if the file is already a genuine SVG (starts with XML / <svg)
+    // Check if the file is ALREADY a genuine vector SVG (starts with XML / <svg and is not PNG)
     if (fs.existsSync(targetFile)) {
       const existing = fs.readFileSync(targetFile);
-      const isRealSvg = existing.length > 50 && (existing[0] === 0x3C /* '<' */ || existing.toString('utf8', 0, 100).includes('<svg'));
-      const isPng = existing[0] === 0x89 && existing[1] === 0x50; // PNG signature
-      if (isRealSvg && !isPng) {
-        console.log(`[${i + 1}/${fileNames.length}] ⏭️  Already Vector SVG: ${fileName} (${existing.length} bytes)`);
+      const isPng = existing.length > 4 && existing[0] === 0x89 && existing[1] === 0x50 && existing[2] === 0x4E;
+      const head = existing.toString('utf8', 0, 150);
+      const isRealSvg = !isPng && (head.includes('<svg') || head.includes('<?xml'));
+      if (isRealSvg) {
+        console.log(`${progress} ⏭️  Already Valid Vector SVG: ${fileName} (${existing.length} bytes) - "${signTitle}"`);
         skippedCount++;
         continue;
       }
@@ -169,33 +177,52 @@ async function main() {
 
     const downloadUrl = directUrls.get(fileName);
     if (!downloadUrl) {
-      console.warn(`[${i + 1}/${fileNames.length}] ⚠️  No direct URL resolved for ${fileName}`);
+      console.warn(`${progress} ⚠️  No direct URL resolved for ${fileName}`);
       failedCount++;
       continue;
     }
 
-    try {
-      const data = await fetchUrl(downloadUrl);
+    // Attempt download with automatic backoff retry on 429
+    let downloaded = false;
+    let attempt = 0;
+    const maxAttempts = 4;
 
-      // Validate SVG structure
-      const isPng = data[0] === 0x89 && data[1] === 0x50 && data[2] === 0x4E && data[3] === 0x47;
-      const dataText = data.toString('utf8', 0, 300);
-      const isSvg = dataText.includes('<svg') || dataText.includes('<?xml');
+    while (attempt < maxAttempts && !downloaded) {
+      attempt++;
+      try {
+        const data = await fetchUrl(downloadUrl);
 
-      if (isPng || !isSvg) {
-        throw new Error(`Downloaded content is not valid SVG (PNG header or missing <svg> tag)`);
+        // Validate SVG structure
+        const isPng = data[0] === 0x89 && data[1] === 0x50 && data[2] === 0x4E && data[3] === 0x47;
+        const dataText = data.toString('utf8', 0, 300);
+        const isSvg = dataText.includes('<svg') || dataText.includes('<?xml');
+
+        if (isPng || !isSvg) {
+          throw new Error('Downloaded content is not valid SVG XML (PNG signature or missing <svg> tag)');
+        }
+
+        fs.writeFileSync(targetFile, data);
+        console.log(`${progress} ✅ Pulled Vector SVG: ${fileName} (${data.length} bytes) - "${signTitle}"`);
+        successCount++;
+        downloaded = true;
+
+        // Polite delay (1000ms) between successful requests to stay well within Wikimedia CDN limits
+        await sleep(1000);
+      } catch (err) {
+        if (err.message && err.message.includes('429')) {
+          // Calculate cooldown period
+          const cooldownSec = err.retryAfter ? Math.max(err.retryAfter, 12) : (10 + (attempt * 5));
+          console.warn(`${progress} ⏳ Wikimedia CDN Rate Limit (429). Pausing for ${cooldownSec}s before attempt ${attempt + 1}/${maxAttempts}...`);
+          await sleep(cooldownSec * 1000);
+        } else {
+          console.error(`${progress} ❌ Error downloading ${fileName}: ${err.message}`);
+          break; // Non-429 error, move to next file
+        }
       }
+    }
 
-      fs.writeFileSync(targetFile, data);
-      console.log(`[${i + 1}/${fileNames.length}] ✅ Pulled Vector SVG: ${fileName} (${data.length} bytes) - "${signTitle}"`);
-      successCount++;
-
-      // Polite delay between downloads
-      await sleep(150);
-    } catch (err) {
-      console.error(`[${i + 1}/${fileNames.length}] ❌ Failed to download ${fileName}: ${err.message}`);
+    if (!downloaded) {
       failedCount++;
-      await sleep(300);
     }
   }
 

@@ -237,16 +237,28 @@ const QuestionsExplorer = {
               <span class="badge badge-blue">${q.id}</span>
               <span class="badge badge-gray">${q.category}</span>
             </div>
-            <button class="btn-icon q-bm-btn" style="width: auto; padding: 0 0.6rem; height: 32px; font-size: 0.8rem; gap: 0.3rem;" id="bm-btn-${q.id}" data-qid="${q.id}">
+            <button class="btn-icon q-bm-btn" style="width: auto; padding: 0 0.75rem; min-height: 40px; font-size: 0.82rem; gap: 0.35rem;" id="bm-btn-${q.id}" data-qid="${q.id}">
               ${isBookmarked ? '★ Bookmarked' : '☆ Bookmark'}
             </button>
           </div>
 
-          ${q.signImage ? `
-            <div style="max-width: 140px; margin: 0.5rem 0 1rem; padding: 0.5rem; background: var(--bg-main); border: 1px solid var(--border); border-radius: var(--radius-md);">
-              <img src="${q.signImage}" alt="Road Sign" width="100" height="80" style="max-height: 100px; object-fit: contain; margin: 0 auto;" loading="lazy">
-            </div>
-          ` : ''}
+          ${q.signImage ? (() => {
+            let fallback = '';
+            let signTitle = 'Road Sign';
+            if (typeof SRI_LANKA_ROAD_SIGNS !== 'undefined') {
+              const sObj = SRI_LANKA_ROAD_SIGNS.find(s => s.localFile === q.signImage || s.fileName === q.signImage.split('/').pop());
+              if (sObj) {
+                fallback = sObj.imgUrl || '';
+                signTitle = sObj.name || 'Road Sign';
+              }
+            }
+            return `
+              <div style="max-width: 140px; margin: 0.5rem 0 1rem; padding: 0.65rem; background: var(--bg-card); border: 2px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <img src="${q.signImage}" alt="${signTitle}" width="100" height="90" style="max-height: 90px; max-width: 100px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));" loading="lazy" decoding="async" onerror="this.onerror=null; if('${fallback}') this.src='${fallback}';">
+                <span style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center; font-weight: 600;">${signTitle}</span>
+              </div>
+            `;
+          })() : ''}
 
           <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem;">${q.question}</h3>
 

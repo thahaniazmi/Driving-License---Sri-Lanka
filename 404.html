@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Wrong Turn Ahead | Sri Lanka Driving License Portal</title>
+  <meta name="description" content="The page you requested could not be found. Return to the Sri Lanka driving license guide, road signs library, or exam simulator.">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .error-wrapper {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+    .error-card {
+      max-width: 650px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .error-sign {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: floatSign 3s ease-in-out infinite;
+    }
+    @keyframes floatSign {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .error-code {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+      border: 1px solid var(--danger);
+      border-radius: var(--radius-full);
+      margin-bottom: 1rem;
+    }
+    .error-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .error-nav-item {
+      padding: 1rem;
+      background: var(--bg-main);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .error-nav-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🇱🇰</div>
+        <div class="brand-text">
+          <span class="brand-title">Sri Lanka Driving License</span>
+          <span class="brand-subtitle">DMT Official Guide & Prep Portal</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">📖 Procedure Guide</a></li>
+        <li><a href="signs.html" class="nav-link">🚸 Road Signs (134)</a></li>
+        <li><a href="quiz.html" class="nav-link">📝 1:1 Written Exam</a></li>
+        <li><a href="questions.html" class="nav-link">📚 Question Bank (100)</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="theme-toggle-btn" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <a href="quiz.html" class="btn-cta">
+          <span>Take Test</span>
+          <span>→</span>
+        </a>
+        <button id="mobile-menu-toggle" class="btn-icon mobile-menu-btn" title="Open Navigation Menu" aria-label="Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Error Content -->
+  <main class="error-wrapper">
+    <div class="error-card">
+      <div class="error-sign">
+        <img src="assets/signs/LK_road_sign_PHS-01.svg" alt="No Entry Road Sign" width="110" height="110" style="object-fit: contain;">
+      </div>
+      <div class="error-code">Sign PHS-01 • No Entry (Error 404)</div>
+      <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.75rem;">Wrong Turn Ahead!</h1>
+      <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
+        The route or page you are looking for has been moved, detoured, or does not exist. Let's get you back on the right road!
+      </p>
+
+      <div class="error-grid">
+        <a href="index.html" class="error-nav-item">
+          <span style="font-size: 1.5rem;">📖</span>
+          <div>
+            <div style="font-weight: 700;">Procedure Guide</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">6-Phase DMT Roadmap</div>
+          </div>
+        </a>
+        <a href="quiz.html" class="error-nav-item">
+          <span style="font-size: 1.5rem;">📝</span>
+          <div>
+            <div style="font-weight: 700;">1:1 Exam Simulator</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">40 Qs Timed Test</div>
+          </div>
+        </a>
+        <a href="signs.html" class="error-nav-item">
+          <span style="font-size: 1.5rem;">🚸</span>
+          <div>
+            <div style="font-weight: 700;">Road Signs Library</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">134 Official Signs</div>
+          </div>
+        </a>
+        <a href="questions.html" class="error-nav-item">
+          <span style="font-size: 1.5rem;">📚</span>
+          <div>
+            <div style="font-weight: 700;">Question Bank</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">100 Past Questions</div>
+          </div>
+        </a>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <a href="index.html" class="btn-hero-primary" style="display: inline-flex; justify-content: center;">
+          <span>← Return to Home Guide</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>© 2026 Sri Lanka Driving License Portal. Free educational reference for all Sri Lankan driving candidates.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

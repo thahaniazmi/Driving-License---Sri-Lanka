@@ -33,6 +33,9 @@ const SignsManager = {
       }
     }
 
+    // Initialize flashcardDeck with filtered or full pool
+    this.updateFlashcardDeck();
+
     if (modeParam === 'flashcards') {
       const viewGridBtn = document.getElementById('view-grid-btn');
       const viewFlashBtn = document.getElementById('view-flash-btn');
@@ -60,6 +63,7 @@ const SignsManager = {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
           this.searchQuery = e.target.value.trim().toLowerCase();
+          this.updateFlashcardDeck();
           this.renderSignsGrid();
         }, 150);
       });
@@ -102,6 +106,7 @@ const SignsManager = {
         tab.classList.add('active');
         this.currentCategory = tab.dataset.category || 'all';
         AudioEngine.playClick();
+        this.updateFlashcardDeck();
         this.renderSignsGrid();
       });
     });
@@ -188,8 +193,10 @@ const SignsManager = {
       if (this.currentCategory !== 'all') {
         const cat = (sign.mainCategory || '').toLowerCase();
         const sec = (sign.section || '').toLowerCase();
+        const subCat = (sign.category || '').toLowerCase();
+        const badge = (sign.categoryBadge || '').toLowerCase();
         const target = this.currentCategory.toLowerCase();
-        matchCat = cat.includes(target) || sec.includes(target);
+        matchCat = cat.includes(target) || sec.includes(target) || subCat.includes(target) || badge.includes(target);
       }
 
       // Search query match
@@ -198,7 +205,8 @@ const SignsManager = {
         const name = (sign.name || '').toLowerCase();
         const id = (sign.id || '').toLowerCase();
         const meaning = (sign.meaningType || '').toLowerCase();
-        matchSearch = name.includes(this.searchQuery) || id.includes(this.searchQuery) || meaning.includes(this.searchQuery);
+        const cat = (sign.mainCategory || '').toLowerCase();
+        matchSearch = name.includes(this.searchQuery) || id.includes(this.searchQuery) || meaning.includes(this.searchQuery) || cat.includes(this.searchQuery);
       }
 
       return matchCat && matchSearch;
@@ -232,7 +240,7 @@ const SignsManager = {
       icon: '🛑'
     },
     'Informative': {
-      title: 'Class 6: Directional & Informative Signs (22 Signs)',
+      title: 'Class 6: Directional & Informative Signs (25 Signs)',
       desc: '<strong>Rectangular boards. Green for Expressways and Class-A trunk roads; Blue for Provincial roads and driver amenities</strong> (Parking, Fuel, Hospitals, Distances). Directs drivers safely to destinations.',
       icon: 'ℹ️'
     },
@@ -334,6 +342,7 @@ const SignsManager = {
         if (sign.imgUrl) modalImg.src = sign.imgUrl;
       };
       modalImg.src = sign.localFile;
+      modalImg.alt = sign.name;
       modalImg.decoding = 'async';
     }
     if (modalCode) modalCode.textContent = sign.id.replace('LK_Road_sign_', '').replace('LK_road_sign_', '');
@@ -350,8 +359,15 @@ const SignsManager = {
   },
 
   // Flashcards Mode
+  updateFlashcardDeck() {
+    const filtered = this.getFilteredSigns();
+    this.flashcardDeck = filtered.length > 0 ? [...filtered] : [...this.signs];
+    this.flashcardIndex = 0;
+    this.renderFlashcard();
+  },
+
   renderFlashcard() {
-    if (!this.flashcardDeck.length) return;
+    if (!this.flashcardDeck || !this.flashcardDeck.length) return;
     const sign = this.flashcardDeck[this.flashcardIndex];
     if (!sign) return;
 
@@ -371,13 +387,14 @@ const SignsManager = {
         if (sign.imgUrl) frontImg.src = sign.imgUrl;
       };
       frontImg.src = sign.localFile;
+      frontImg.alt = sign.name;
       frontImg.decoding = 'async';
     }
     if (frontCode) frontCode.textContent = sign.id.replace('LK_Road_sign_', '').replace('LK_road_sign_', '');
     if (backTitle) backTitle.textContent = sign.name;
     if (backCategory) backCategory.textContent = sign.mainCategory;
     if (backMeaning) backMeaning.textContent = sign.meaningType;
-    if (backShape) backShape.textContent = sign.shape;
+    if (backShape) backShape.textContent = sign.shape || 'Standard Traffic Device';
     if (progressEl) progressEl.textContent = `Card ${this.flashcardIndex + 1} of ${this.flashcardDeck.length}`;
   },
 

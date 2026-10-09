@@ -1494,8 +1494,8 @@ const SRI_LANKA_ROAD_SIGNS = [
     "imgUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Exit_Ramp_-_Direction_Sign.svg/120px-Exit_Ramp_-_Direction_Sign.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "fileHref": "https://en.wikipedia.org/wiki/File:Exit_Ramp_-_Direction_Sign.svg",
     "localFile": "assets/signs/Exit_Ramp_-_Direction_Sign.svg",
-    "mainCategory": "Expressway Signs",
-    "categoryBadge": "Expressway",
+    "mainCategory": "Informative & Directional Signs",
+    "categoryBadge": "Informative",
     "shape": "Blue / Green Rectangle",
     "meaningType": "Information and regulations specific to high-speed expressway networks."
   },
